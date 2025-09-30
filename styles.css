@@ -8,6 +8,10 @@
     --color-carrot: #F7031E;
     --font-headline: 'Berlin Sans FB', sans-serif;
     --font-text: 'Roboto Light', sans-serif;
+    --var-container-width: 1200px;
+    --var-container-width-lg: 1400px;
+    --var-container-width-md: 1000px;
+    --var-container-width-sm: 800px;
 }
 
 * {
@@ -188,6 +192,54 @@ button {
     }
 }
 
+/***Fonts***/
+h1, .st-h1 {
+    font-family: var(--font-headline);
+    font-size: 48px;
+    font-weight: 100;
+    line-height: 1.2;
+    margin: 0;
+}
+
+h2, .st-h2 {
+    font-family: var(--font-headline);
+    font-size: 36px;
+    font-weight: 100;
+    line-height: 1.2;
+    margin: 0;
+}
+
+p, .st-p {
+    font-family: var(--font-text);
+    font-size: 16px;
+    font-weight: 400;
+    margin: 0;
+}
+/***Buttons***/
+.btn.v1 {
+    background-color: var(--color-flame);
+    padding: 10px 32px;
+    color: #fff;
+    font-family: var(--font-headline);
+    font-weight: 100;
+    display: inline-block;
+    transition: all .25s ease 0s;
+}
+
+.btn.v1:hover, 
+.btn.v1:focus, 
+.btn.v1:active,
+.header-nav-cta a:hover, 
+.header-nav-cta a:focus, 
+.header-nav-cta a:active {
+    background-color: var(--color-fern);
+}
+
+/***Content Styles***/
+.cnt-stl * {
+    margin-bottom: 16px;
+}
+
 /***Header***/
 .header {
     position: fixed;
@@ -241,6 +293,7 @@ ul.header-nav-list {
     color: #fff;
     font-family: var(--font-headline);
     font-weight: 100;
+    transition: all .25s ease 0s;
 }
 
 /***Hero***/
@@ -257,29 +310,49 @@ ul.header-nav-list {
 }
 
 .hero {
-    padding: 0 0 56px;
+    padding: 0;
 }
 
 .hero-content {
     position: absolute;
-    bottom: 50%;
-    right: 50%;
-    transform: translate(61%, 58%);
+    bottom: 32%;
+    right: 18%;
+    max-width: 25%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
 .hero-container {
     position: relative;
 }
 
-.hero-content h1 {
-    color: #e06126;
+.hero-content p {
+    color: #fff;
     font-family: var(--font-headline);
-    font-weight: 400;
-    font-size: 72px;
-    line-height: .8;
+    font-size: 48px;
+    margin: 0;
 }
 
 .hero-content-highlight {
     color: #F7941D;
     display: block;
+}
+
+/***Season Intro***/
+.intro-content {
+    padding: 32px 24px;
+    /* background-color: var(--color-fern); */
+    /* color: #fff; */
+}
+
+.intro-content h1 {
+    color: var(--color-fern);
+}
+
+.season-intro .image-cont {
+    --_var-img-height: 320px;
 }
