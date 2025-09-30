@@ -3,88 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SCSO - Welcome</title>
+    <title>Santa Clarita Symphony Orchestra</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
     <header class="header">
-        <nav class="nav">
-            <div class="nav-brand">
-                <h1>SCSO</h1>
+        <div class="header-top-bar">
+            <a class="header-top-bar-link" href="mailing-list.html">Join Our Mailing List</a>
+        </div>
+        <div class="header-container">
+            <div class="header-logo">
+                <img src="images/scso-logo-horizontal-1500x525.png" alt="Santa Clarita Symphony Orchestra">
             </div>
-            <ul class="nav-menu">
-                <li><a href="#home" class="nav-link">Home</a></li>
-                <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#services" class="nav-link">Services</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
-            </ul>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
+            <div class="header-nav">
+                <ul class="header-nav-list">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="support.html">Support</a></li>
+                </ul>
+                <div class="header-nav-cta">
+                    <a href="https://scso.ludus.com/index.php">Tickets</a>
+                </div>
             </div>
-        </nav>
+        </div>
     </header>
 
     <main>
-        <section id="home" class="hero">
-            <div class="hero-content">
-                <h1 class="hero-title">Welcome to SCSO</h1>
-                <p class="hero-subtitle">Your trusted partner for innovative solutions</p>
-                <button class="cta-button">Get Started</button>
-            </div>
-            <div class="hero-image">
-                <div class="placeholder-image"></div>
-            </div>
-        </section>
-
-        <section id="about" class="about">
-            <div class="container">
-                <h2>About Us</h2>
-                <p>SCSO is dedicated to delivering exceptional value through innovative solutions and outstanding service. We believe in building lasting relationships with our clients and exceeding expectations in everything we do.</p>
-            </div>
-        </section>
-
-        <section id="services" class="services">
-            <div class="container">
-                <h2>Our Services</h2>
-                <div class="services-grid">
-                    <div class="service-card">
-                        <div class="service-icon">🚀</div>
-                        <h3>Innovation</h3>
-                        <p>Cutting-edge solutions that drive your business forward</p>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon">💡</div>
-                        <h3>Strategy</h3>
-                        <p>Strategic planning and consulting to achieve your goals</p>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon">🤝</div>
-                        <h3>Partnership</h3>
-                        <p>Long-term partnerships built on trust and results</p>
-                    </div>
+        <section class="hero">
+            <div class="hero-container">
+                <div class="hero-image">
+                    <img src="images/scso-hero-2.webp" alt="Hero Image">
+                </div>
+                <div class="hero-content">
+                    <h1>Santa Clarita <span class="hero-content-highlight">Symphony Orchestra</span></h1>
                 </div>
             </div>
-        </section>
 
-        <section id="contact" class="contact">
-            <div class="container">
-                <h2>Get In Touch</h2>
-                <form class="contact-form">
-                    <div class="form-group">
-                        <input type="text" id="name" name="name" placeholder="Your Name" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="email" id="email" name="email" placeholder="Your Email" required>
-                    </div>
-                    <div class="form-group">
-                        <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
-                    </div>
-                    <button type="submit" class="submit-button">Send Message</button>
-                </form>
-            </div>
         </section>
     </main>
 
