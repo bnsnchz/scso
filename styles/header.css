@@ -3,7 +3,13 @@
     position: fixed;
     width: 100%;
     z-index: 999;
+    background-color: transparent;
+    transition: all .25s ease 0s;
 }
+
+.header.scrolled {
+    background-color: #fff;
+}   
 
 .header-container {
     display: flex;
@@ -15,6 +21,11 @@
 
 .header-logo img {
     max-width: 400px;
+    transition: all .25s ease 0s;
+}
+
+.header.scrolled .header-logo img {
+    max-width: 250px;
 }
 
 .header-nav {
@@ -29,7 +40,12 @@ ul.header-nav-list {
 
 .header-nav-list li a {
     font-family: var(--font-headline);
-    color: #fff
+    color: #fff;
+    transition: all .25s ease 0s;
+}
+
+.header.scrolled .header-nav-list li a {
+    color: #000;
 }
 
 .header-top-bar {
