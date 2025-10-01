@@ -10,11 +10,12 @@ A modern Vue.js implementation of the Santa Clarita Symphony Orchestra website.
 - 💫 **Reactive data** - Dynamic event management
 - 🎯 **SEO-friendly** - Semantic HTML structure
 - ⚡ **Fast development** - Hot reload with Vite
+- 🌐 **GitHub Pages ready** - Automated deployment
 
 ## Project Structure
 
 ```
-vue-version/
+scso/
 ├── public/
 │   └── images/          # All website images
 ├── src/
@@ -23,11 +24,15 @@ vue-version/
 │   │   ├── Hero.vue
 │   │   ├── UpcomingEvents.vue
 │   │   ├── NonProfitBanner.vue
+│   │   ├── ContentCards.vue
 │   │   └── Footer.vue
 │   ├── styles/
 │   │   └── main.css     # Global styles
 │   ├── App.vue          # Main app component
 │   └── main.js          # App entry point
+├── .github/
+│   └── workflows/
+│       └── deploy.yml   # GitHub Actions deployment
 ├── index.html           # HTML template
 ├── package.json         # Dependencies
 ├── vite.config.js       # Vite configuration
@@ -75,6 +80,48 @@ npm run build
 ```
 
 The built files will be in the `dist` directory.
+
+## GitHub Pages Deployment
+
+This project is configured for automatic deployment to GitHub Pages.
+
+### Automatic Deployment (Recommended)
+
+1. **Push to main branch**: The site automatically deploys when you push changes to the `main` branch
+2. **Check deployment status**: Go to the "Actions" tab in your GitHub repository
+3. **View your site**: Once deployed, your site will be available at:
+   ```
+   https://yourusername.github.io/scso/
+   ```
+
+### Manual Deployment
+
+If you prefer to deploy manually:
+
+1. **Install gh-pages**:
+   ```bash
+   npm install
+   ```
+
+2. **Deploy**:
+   ```bash
+   npm run deploy
+   ```
+
+### Setting up GitHub Pages
+
+1. **Enable GitHub Pages**:
+   - Go to your repository settings
+   - Scroll down to "Pages" section
+   - Select "GitHub Actions" as the source
+
+2. **Configure repository name**:
+   - If your repository is named `scso`, the site will be at `https://yourusername.github.io/scso/`
+   - If you want it at `https://yourusername.github.io/`, rename your repository to `yourusername.github.io`
+
+3. **Update base path** (if needed):
+   - If your repository name is different, update the `base` path in `vite.config.js`
+   - Change `/scso/` to match your repository name
 
 ## Key Improvements Over Original
 
