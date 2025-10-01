@@ -4,7 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Santa Clarita Symphony Orchestra</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/header.css">
+    <link rel="stylesheet" href="styles/hero.css">
+    <link rel="stylesheet" href="styles/upcoming-events.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
@@ -20,7 +23,7 @@
             </div>
             <div class="header-nav">
                 <ul class="header-nav-list">
-                    <li><a href="index.html">Home</a></li>
+                    <li><a href="season.html">2025/2026 Season</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="support.html">Support</a></li>
                 </ul>
@@ -30,7 +33,6 @@
             </div>
         </div>
     </header>
-
     <main>
         <section class="hero">
             <div class="hero-container">
@@ -40,26 +42,51 @@
                 <div class="hero-content">
                     <img src="images/scso-acronym-bgtransparent.png" alt="SCSO Logo">
                     <p>Introducing our 2025/2026 season</p>
-                    <a href="https://scso.ludus.com/index.php" class="btn v1">Explore Ticket Options</a>
+                    <a class="btn v1" href="https://scso.ludus.com/index.php">Explore Ticket Options</a>
                 </div>
             </div>
         </section>
-        <section class="season-intro">
-            <div class="st-container st-flex st-half st-align-center">
-                <div class="st-item intro-content cnt-stl">
-                    <h1>New Celebrations: Folk Roots & Fresh Horizons</h1>
-                    <p>Our theme this 2025-2026 season is centered around celebrating the musical roots of our orchestra and our community, starting with a celebration of home.</p>
-                    <p>Inspired by the beauty of his home in Bohemia, Smetana’s Moldau evokes the beauty of its countryside, Borodin’s bold and lyrical Symphony No. 2 draws on the richness of the composer's Russian roots, and the new work Vampire Waltz by composer Nathaniel Edison celebrates a fresh voice from our community. Bookended by works inspired by identity and home, this concert also marks our new conductor Martín Alexander Arellano’s own homecoming to California after a decade away.</p>
-                    <p>Don't miss the exciting inaugural concert of our new season, celebrating home and music here in the Santa Clarita Valley.</p>
-                    <a href="https://scso.ludus.com/index.php" class="btn v1">Explore Ticket Options</a>
-                </div>
-                <div class="st-item intro-image image-cont">
-                    <img src="images/new celebrations logo.avif" alt="Season Intro Image">
+        <section class="upcoming-events">
+            <div class="st-container">
+                <header class="upcoming-events-header st-flex st-flex-between">
+                    <h2>Upcoming Events</h2>
+                    <a class="btn v1" href="current-season.html">View Calendar</a>
+                </header>
+                <div class="upcoming-events-list">
+                    <ul class="upcoming-events-list-items">
+                        <li class="event-item">
+                            <a href="event.html">
+                                <div class="upcoming-events-list-item-image">
+                                    <img src="images/event-image.jpg" alt="Event Image">
+                                </div>
+                            </a>
+                        </li>
+                        <li class="event-item">
+                            <a href="event.html">
+                                <div class="upcoming-events-list-item-image">
+                                    <img src="images/event-image.jpg" alt="Event Image">
+                                </div>
+                            </a>
+                        </li>
+                        <li class="event-item">
+                            <a href="event.html">
+                                <div class="upcoming-events-list-item-image">
+                                    <img src="images/event-image.jpg" alt="Event Image">
+                                </div>
+                            </a>
+                        </li>
+                        <li class="event-item">
+                            <a href="event.html">
+                                <div class="upcoming-events-list-item-image">
+                                    <img src="images/event-image.jpg" alt="Event Image">
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </section>
     </main>
-
     <footer class="footer">
         <div class="container">
             <p>&copy; 2025 SCSO. All rights reserved.</p>

@@ -1,0 +1,10 @@
+.upcoming-events {
+    margin-top: -7rem;
+    z-index: 3;
+    position: relative;
+}
+
+.upcoming-events .st-container {
+    background-color: #fff;
+    padding: 24px;
+}

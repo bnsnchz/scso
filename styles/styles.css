@@ -1,11 +1,11 @@
 @import url('https://fonts.cdnfonts.com/css/berlin-sans-fb');
 
 :root{
-    --color-russet: #7D451B;
-    --color-fern: #5E8247;
-    --color-pistachio: #98C457;
-    --color-flame: #DE6026;
-    --color-carrot: #F7031E;
+    --color-russet: #653514;
+    --color-fern: #53833E;
+    --color-pistachio: #8DC543;
+    --color-flame: #E06126;
+    --color-carrot: #F7941D;
     --font-headline: 'Berlin Sans FB', sans-serif;
     --font-text: 'Roboto Light', sans-serif;
     --var-container-width: 1200px;
@@ -21,7 +21,7 @@
 body {
     margin: 0;
     font-family: var(--font-text);
-    background: #fff;
+    background: #060201;
 }
 
 body > * {
@@ -237,122 +237,6 @@ p, .st-p {
 
 /***Content Styles***/
 .cnt-stl * {
-    margin-bottom: 16px;
+    margin-bottom: 22px;
 }
 
-/***Header***/
-.header {
-    position: fixed;
-    width: 100%;
-    z-index: 999;
-}
-
-.header-container {
-    display: flex;
-    justify-content: space-between;
-    padding: 12px 32px;
-    align-items: center;
-    background-color: transparent;
-}
-
-.header-logo img {
-    max-width: 400px;
-}
-
-.header-nav {
-    display: flex;
-    gap: 48px;
-}
-
-ul.header-nav-list {
-    display: flex;
-    gap: 48px;
-}
-
-.header-nav-list li a {
-    font-family: var(--font-headline);
-    color: #fff
-}
-
-.header-top-bar {
-    padding: 12px 32px;
-    background-color: var(--color-pistachio);
-    display: flex;
-    justify-content: flex-end;
-}
-
-.header-top-bar-link {
-    color: #fff;
-    text-decoration: underline;
-    font-family: var(--font-headline);
-}
-
-.header-nav-cta a {
-    background-color: var(--color-flame);
-    padding: 10px 32px;
-    color: #fff;
-    font-family: var(--font-headline);
-    font-weight: 100;
-    transition: all .25s ease 0s;
-}
-
-/***Hero***/
-.hero-image {
-    position: relative;
-    height: 1028px;
-    overflow: hidden;
-}
-
-.hero-image img {
-    position: absolute;
-    object-fit: cover;
-    object-position: bottom;
-}
-
-.hero {
-    padding: 0;
-}
-
-.hero-content {
-    position: absolute;
-    bottom: 32%;
-    right: 18%;
-    max-width: 25%;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-}
-
-.hero-container {
-    position: relative;
-}
-
-.hero-content p {
-    color: #fff;
-    font-family: var(--font-headline);
-    font-size: 48px;
-    margin: 0;
-}
-
-.hero-content-highlight {
-    color: #F7941D;
-    display: block;
-}
-
-/***Season Intro***/
-.intro-content {
-    padding: 32px 24px;
-    /* background-color: var(--color-fern); */
-    /* color: #fff; */
-}
-
-.intro-content h1 {
-    color: var(--color-fern);
-}
-
-.season-intro .image-cont {
-    --_var-img-height: 320px;
-}
