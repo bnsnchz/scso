@@ -7,6 +7,10 @@
     position: relative;
 }
 
+.non-profit-banner .image-cont img {
+    object-position: top;
+}
+
 .non-profit-banner .image-cont:after {
     content: '';
     position: absolute;
@@ -19,10 +23,21 @@
 
 .non-profit-banner-content {
     position: absolute;
-    bottom: 25%;
+    top: 0;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translate(-50%, 30%);
     color: #fff;
-    padding: 24px;
-    max-width: 900px;
+    padding: 48px 24px;
+    max-width: 600px;
+    background: #53833E;
+    background: radial-gradient(circle,rgba(83, 131, 62, 1) 0%, rgba(141, 197, 67, 1) 100%);
+}
+
+.non-profit-banner h2 {
+    font-size: 48px;
+}
+
+.non-profit-banner p {
+    font-size: 20px;
+    line-height: 120%;
 }

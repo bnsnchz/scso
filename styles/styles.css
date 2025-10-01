@@ -225,15 +225,25 @@ p, .st-p {
     font-weight: 400;
     margin: 0;
 }
+
 /***Buttons***/
-.btn.v1 {
-    background-color: var(--color-flame);
+.btn {
     padding: 10px 32px;
-    color: #fff;
     font-family: var(--font-headline);
     font-weight: 100;
     display: inline-block;
     transition: all .25s ease 0s;
+}
+
+.btn.v1 {
+    background-color: var(--color-flame);
+    color: #fff;
+}
+
+.btn.v2 {
+    background-color: transparent;
+    border: 1px solid #fff;
+    color: #fff;
 }
 
 .btn.v1:hover, 
@@ -243,6 +253,13 @@ p, .st-p {
 .header-nav-cta a:focus, 
 .header-nav-cta a:active {
     background-color: var(--color-fern);
+}
+
+.btn.v2:hover, 
+.btn.v2:focus, 
+.btn.v2:active {
+    background-color: #fff;
+    color: #000;
 }
 
 /***Content Styles***/
