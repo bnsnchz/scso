@@ -5,7 +5,7 @@
     </div>
     <div class="header-container">
       <div class="header-logo">
-        <img src="./images/scso-logo-horizontal-1500x525.png" alt="Santa Clarita Symphony Orchestra">
+        <img src="/scso/images/scso-logo-horizontal-1500x525.png" alt="Santa Clarita Symphony Orchestra">
       </div>
       <div class="header-nav">
         <ul class="header-nav-list">
