@@ -3,7 +3,7 @@
     <div class="content-cards-container st-flex st-half st-flex-between st-container-lg">
       <div class="content-cards-item st-item">
         <div class="content-cards-item-image image-cont">
-          <img src="images/alex-hp.webp" alt="Martin Alex Arellano">
+          <img :src="alexImageUrl" alt="Martin Alex Arellano">
         </div>
         <div class="content-cards-item-content cnt-stl">
           <h2>Martin Alex Arellano</h2>
@@ -13,7 +13,7 @@
       </div>
       <div class="content-cards-item st-item">
         <div class="content-cards-item-image image-cont">
-          <img src="images/youth-concerto.avif" alt="Youth Concerto Competition">
+          <img :src="youthImageUrl" alt="Youth Concerto Competition">
         </div>
         <div class="content-cards-item-content cnt-stl">
           <h2>Youth Concerto Competition</h2>
@@ -30,7 +30,15 @@
 
 <script>
 export default {
-  name: 'ContentCards'
+  name: 'ContentCards',
+  computed: {
+    alexImageUrl() {
+      return '/scso/images/alex-hp.webp'
+    },
+    youthImageUrl() {
+      return '/scso/images/youth-concerto.avif'
+    }
+  }
 }
 </script>
 
