@@ -40,12 +40,13 @@ export default {
 }
 
 .content-cards-item-image {
-    height: 500px;
+    height: 361px;
     max-width: 70%;
 }
 
 .content-cards-item-image img {
-    object-fit: contain;
+    object-fit: cover;
+    border: 1px solid rgba(83, 131, 62, .5);
 }
 
 .content-cards-item-content {
