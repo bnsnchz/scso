@@ -2,10 +2,10 @@
   <section class="hero">
     <div class="hero-container">
       <div class="hero-image">
-        <img src="/scso/images/SCSO-Spring2024-88.webp" alt="Hero Image">
+        <img src="images/SCSO-Spring2024-88.webp" alt="Hero Image">
       </div>
       <div class="hero-content">
-        <img src="/scso/images/scso-acronym-bgtransparent.png" alt="SCSO Logo">
+        <img src="images/scso-acronym-bgtransparent.png" alt="SCSO Logo">
         <p>Introducing our 2025/2026 season</p>
         <a class="btn v1" href="https://scso.ludus.com/index.php">Explore Ticket Options</a>
       </div>
