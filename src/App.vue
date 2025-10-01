@@ -37,28 +37,28 @@ export default {
           id: 1,
           title: 'New Beginnings',
           date: 'Sunday, October 12',
-          image: '/images/new-beginnings.avif',
+          image: './images/new-beginnings.avif',
           ticketUrl: 'https://scso.ludus.com/show_page.php?show_id=200491376'
         },
         {
           id: 2,
           title: 'Sounds of the Seasons',
           date: 'Sunday, December 7',
-          image: '/images/sounds-of-the-seaons.avif',
+          image: './images/sounds-of-the-seaons.avif',
           ticketUrl: 'https://scso.ludus.com/show_page.php?show_id=200491377'
         },
         {
           id: 3,
           title: 'Dreams and Desires',
           date: 'Sunday, March 8',
-          image: '/images/dreams-and-desires.avif',
+          image: './images/dreams-and-desires.avif',
           ticketUrl: 'https://scso.ludus.com/show_page.php?show_id=200491379'
         },
         {
           id: 4,
           title: 'Dances the World Over',
           date: 'Sunday, June 7',
-          image: '/images/dances-the-world-over.avif',
+          image: './images/dances-the-world-over.avif',
           ticketUrl: 'https://scso.ludus.com/show_page.php?show_id=200491380'
         }
       ]

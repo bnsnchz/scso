@@ -2,7 +2,7 @@
   <section class="non-profit-banner">
     <div>
       <div class="image-cont">
-        <img src="/images/non-profit.jpg" alt="Non-Profit Banner">
+        <img src="./images/non-profit.jpg" alt="Non-Profit Banner">
       </div>
       <div class="non-profit-banner-content st-center cnt-stl">
         <h2>Make An Impact</h2>
