@@ -6,8 +6,8 @@
       </div>
       <div class="hero-content">
         <img :src="logoUrl" alt="Santa Clarita Symphony Orchestra Logo" loading="eager">
-        <h1>Introducing our 2025/2026 season</h1>
-        <p class="hero-description">Experience world-class classical music with the Santa Clarita Symphony Orchestra. Join us for an unforgettable season of concerts, featuring our new conductor Martin Alex Arellano and exciting community programs.</p>
+        <h1>Join us for our 2025/2026 season</h1>
+        <p class="hero-description">Experience the magic of live classical music with Santa Clarita's premier community orchestra. Join us for an unforgettable season of concerts, featuring our new conductor Martin Alex Arellano and celebrating the talented musicians who make our community vibrant through music.</p>
         <a class="btn v1" href="https://scso.ludus.com/index.php" aria-label="Purchase tickets for Santa Clarita Symphony Orchestra concerts">Explore Ticket Options</a>
       </div>
     </div>
