@@ -67,12 +67,7 @@ export default {
 .hero-content p {
   color: #fff;
   font-family: var(--font-headline);
-  font-size: 48px;
+  font-size: 56px;
   margin: 0;
-}
-
-.hero-content-highlight {
-  color: #F7941D;
-  display: block;
 }
 </style>

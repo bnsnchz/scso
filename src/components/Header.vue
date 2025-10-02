@@ -42,7 +42,7 @@ export default {
   },
   methods: {
     handleScroll() {
-      this.isScrolled = window.scrollY > 10
+      this.isScrolled = window.scrollY > 250
     }
   }
 }

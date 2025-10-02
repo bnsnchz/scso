@@ -7,7 +7,7 @@
       <ContentCards />
       <NonProfitBanner />
     </main>
-    <Footer />
+    <!-- <Footer /> -->
   </div>
 </template>
 

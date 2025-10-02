@@ -1,27 +1,24 @@
 <template>
   <section class="content-cards">
-    <div class="content-cards-container st-flex st-half st-flex-between st-container-lg">
-      <div class="content-cards-item st-item">
-        <div class="content-cards-item-image image-cont">
+    <div class="content-cards-container st-container-lg">
+      <div class="content-cards-item st-flex st-half st-flex-center">
+        <div class="content-cards-item-image image-cont st-item">
           <img :src="alexImageUrl" alt="Martin Alex Arellano">
         </div>
-        <div class="content-cards-item-content cnt-stl">
+        <div class="content-cards-item-content cnt-stl st-item">
           <h2>Martin Alex Arellano</h2>
           <p>SCSO welcomes our new conductor, Alex Arellano, who will be working closely with Artistic Director Dr. Brian Stone to bring exciting concerts to the Santa Clarita Valley.</p>
-          <a class="btn v1" href="/about-us/artistic-teams.html">Learn More</a>
+          <a class="btn v2" href="/about-us/artistic-teams.html">Learn More</a>
         </div>
       </div>
-      <div class="content-cards-item st-item">
-        <div class="content-cards-item-image image-cont">
+      <div class="content-cards-item st-flex st-half st-flex-reverse st-flex-center">
+        <div class="content-cards-item-image image-cont st-item">
           <img :src="youthImageUrl" alt="Youth Concerto Competition">
         </div>
-        <div class="content-cards-item-content cnt-stl">
+        <div class="content-cards-item-content cnt-stl st-item">
           <h2>Youth Concerto Competition</h2>
-          <p>Last year's event was a rousing success in showcasing the amazing talent we have here in the Santa Clarita Valley.</p>
           <p>SCSO is pleased to open applications for its second Youth Concerto Competition, open to young instrumentalists in grades 9-12.</p>
-          <p>Music Teachers: <a target="_blank" href="public/documents/ycc-flyer.pdf">please download our information flyer</a> to display in your studios.</p>
-          <p>Application Deadline: November 2, 2025 </p>
-          <a class="btn v1" href="/youth-concerto-competition.html">Learn More</a>
+          <a class="btn v2" href="/youth-concerto-competition.html">Learn More</a>
         </div>
       </div>
     </div>
@@ -36,36 +33,40 @@ export default {
       return '/scso/images/alex-hp.webp'
     },
     youthImageUrl() {
-      return '/scso/images/youth-concerto.avif'
+      return '/scso/images/concerto-competition.jpg'
     }
   }
 }
 </script>
 
 <style scoped>
-.content-cards-container {
-  gap: 32px;
+.content-cards {
+    background-color: var(--color-russet);
+}
+
+.content-cards-item:not(:last-child) {
+    margin-bottom: 100px;
 }
 
 .content-cards-item-image {
-    height: 361px;
-    max-width: 70%;
-}
-
-.content-cards-item-image img {
-    object-fit: cover;
-    border: 1px solid rgba(83, 131, 62, .5);
+    --_var-img-height: 450px;
 }
 
 .content-cards-item-content {
-    background-color: #fff;
-    max-width: 400px;
     padding: 24px;
-    margin-left: auto;
-    margin-top: -30%;
-    z-index: 3;
-    position: relative;
-    box-shadow: 7px 7px 0px 0px var(--color-fern);
-    border: 1px solid var(--color-fern);
+    color: #fff;
+    margin-left: -10%;
+    max-width: 550px;
 }
+
+.content-cards-item-content h2 {
+    font-size: 48px;
+}
+
+.content-cards-item.st-flex-reverse .content-cards-item-content {
+    margin-left: 0;
+    margin-right: -10%;
+    z-index: 3;
+}
+
 </style>    

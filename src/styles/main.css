@@ -22,7 +22,7 @@
 body {
   margin: 0;
   font-family: var(--font-text);
-  background: var(--color-black);
+  background: #fff;
   color: var(--color-black);
 }
 
@@ -106,9 +106,16 @@ button {
   justify-content: center;
 }
 
+.st-flex-center {
+  align-items: center;
+}
 
 .st-flex-between {
   justify-content: space-between;
+}
+
+.st-flex-reverse {
+  flex-direction: row-reverse;
 }
 
 .image-cont {
@@ -195,9 +202,10 @@ h1, .st-h1 {
 h2, .st-h2 {
   font-family: var(--font-headline);
   font-size: 36px;
-  font-weight: 100;
+  font-weight: 600;
   line-height: 1.2;
   margin: 0;
+  text-transform: uppercase;
 }
 
 p, .st-p {
@@ -215,6 +223,7 @@ p, .st-p {
   display: inline-block;
   transition: all .25s ease 0s;
   text-decoration: none;
+  font-size: 18px;
 }
 
 .btn.v1 {
@@ -246,8 +255,17 @@ p, .st-p {
   margin-bottom: 22px;
 }
 
+.cnt-stl h2 {
+  font-size: 36px;
+  line-height: 1;
+  margin: 0;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
 .cnt-stl p {
-  line-height: 120%;
+  font-size: 22px;
+  line-height: 1.5;
+  font-weight: 100;
 }
 
 /* Loading animation */

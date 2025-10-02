@@ -3,7 +3,7 @@
     <div class="st-container">
       <header class="upcoming-events-header st-flex st-flex-between">
         <h2>Upcoming Events</h2>
-        <a class="btn v1" href="current-season.html">View Calendar</a>
+        <a class="btn v2" href="current-season.html">View Calendar</a>
       </header>
       <div class="upcoming-events-list">
         <ul class="upcoming-events-list-items st-flex st-four st-flex-between">
@@ -51,9 +51,18 @@ export default {
   margin-bottom: 24px;
 }
 
+.upcoming-events-header h2 {
+  font-family: var(--font-headline);
+  font-size: 32px;
+  text-transform: uppercase;
+  margin: 0;
+  color: #fff;
+}
+
 .upcoming-events .st-container {
-  background-color: #fff;
+  background: linear-gradient(to bottom, var(--color-pistachio) 0 50%, transparent 0 50%);
   padding: 24px;
+  border: .5px solid var(--color-pistachio);
 }
 
 .event-item a {
