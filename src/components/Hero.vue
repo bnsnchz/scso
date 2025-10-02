@@ -70,7 +70,7 @@ export default {
   font-family: var(--font-headline);
   font-size: 56px;
   margin: 0 0 16px 0;
-  font-weight: 100;
+  font-weight: 600;
   line-height: 1.2;
 }
 

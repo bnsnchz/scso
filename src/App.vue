@@ -6,6 +6,7 @@
       <UpcomingEvents :events="upcomingConcerts" />
       <ContentCards />
       <NonProfitBanner />
+      <WideContentCard />
     </main>
     <!-- <Footer /> -->
   </div>
@@ -18,6 +19,7 @@ import ContentCards from './components/ContentCards.vue'
 import UpcomingEvents from './components/UpcomingEvents.vue'
 import NonProfitBanner from './components/NonProfitBanner.vue'
 import Footer from './components/Footer.vue'
+import WideContentCard from './components/WideContentCard.vue'
 
 export default {
   name: 'App',
@@ -27,6 +29,7 @@ export default {
     ContentCards,
     UpcomingEvents,
     NonProfitBanner,
+    WideContentCard,
     Footer
   },
   data() {

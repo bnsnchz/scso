@@ -1,5 +1,5 @@
 <template>
-  <section class="content-cards" aria-labelledby="content-cards-heading">
+  <section class="content-cards drk-bg" aria-labelledby="content-cards-heading">
     <div class="content-cards-container st-container-lg">
       <h2 id="content-cards-heading" class="sr-only">About SCSO Programs</h2>
       
@@ -44,7 +44,7 @@ export default {
 
 <style scoped>
 .content-cards {
-    background-color: var(--color-russet);
+    background-color: var(--color-flame);
 }
 
 .content-cards-item:not(:last-child) {

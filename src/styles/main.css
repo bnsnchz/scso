@@ -1,4 +1,5 @@
 @import url('https://fonts.cdnfonts.com/css/berlin-sans-fb');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 
 :root {
   --color-russet: #653514;
@@ -256,6 +257,10 @@ p, .st-p {
   margin-bottom: 22px;
 }
 
+.drk-bg .cnt-stl * {
+  color: #fff;
+}
+
 .cnt-stl h2 {
   font-size: 36px;
   line-height: 1;
@@ -263,10 +268,17 @@ p, .st-p {
   text-transform: uppercase;
   margin-bottom: 24px;
 }
-.cnt-stl p {
+.cnt-stl p, 
+.cnt-stl strong {
   font-size: 22px;
   line-height: 1.5;
   font-weight: 100;
+}
+
+.cnt-stl strong {
+  font-weight: 600;
+  display: block;
+  margin-bottom: 8px;
 }
 
 /* Loading animation */

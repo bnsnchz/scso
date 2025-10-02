@@ -1,5 +1,5 @@
 <template>
-  <section class="non-profit-banner" aria-labelledby="support-heading">
+  <section class="non-profit-banner drk-bg" aria-labelledby="support-heading">
     <div>
       <div class="image-cont">
         <img :src="bannerImageUrl" alt="Community members enjoying Santa Clarita Symphony Orchestra performance" loading="lazy">
@@ -29,6 +29,7 @@ export default {
 .non-profit-banner {
     position: relative;
     padding: 0;
+    margin-bottom: 350px;
 }
 
 .non-profit-banner .image-cont {
@@ -40,7 +41,7 @@ export default {
     object-position: top;
 }
 
-.non-profit-banner .image-cont:after {
+/* .non-profit-banner .image-cont:after {
     content: '';
     position: absolute;
     width: 100%;
@@ -48,18 +49,17 @@ export default {
     background-color: rgba(0,0,0,.6);
     top: 0;
     left: 0;
-}
+} */
 
 .non-profit-banner-content {
     position: absolute;
     top: 0;
     left: 50%;
-    transform: translate(-50%, 30%);
+    transform: translate(-50%, 40%);
     color: #fff;
     padding: 48px 24px;
     max-width: 800px;
-    background-color: var(--color-fern);
-    border: 1px solid var(--color-fern);
+    background-color: var(--color-black);
 }
 
 .non-profit-banner h2 {
@@ -69,7 +69,7 @@ export default {
 
 .non-profit-banner p {
     font-size: 20px;
-    line-height: 120%;
+    line-height: 1.5;
 }
 
 </style>
