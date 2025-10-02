@@ -2,7 +2,7 @@
   <section class="wide-content-card drk-bg">
     <div class="wide-content-card-container st-flex st-half st-container-lg st-flex-center">
       <div class="wide-content-card-image image-cont st-item">
-        <img src="/scso/public/images/scso-pac.jpg" alt="Wide Content Card Image">
+        <img :src="imageUrl" alt="Santa Clarita Symphony Orchestra at Canyon High School Performing Arts Center" loading="lazy">
       </div>
       <div class="wide-content-card-content cnt-stl st-item">
         <h2>OUR 2025-2026 SEASON</h2>
@@ -20,7 +20,12 @@
 
 <script>
 export default {
-  name: 'WideContentCard'
+  name: 'WideContentCard',
+  computed: {
+    imageUrl() {
+      return '/scso/images/SCSO-pac.jpg'
+    }
+  }
 }
 </script>
 
