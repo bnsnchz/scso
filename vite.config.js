@@ -6,6 +6,17 @@ export default defineConfig({
   base: '/scso/',
   build: {
     outDir: 'dist',
-    emptyOutDir: true
+    emptyOutDir: true,
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          vendor: ['vue']
+        }
+      }
+    }
+  },
+  server: {
+    port: 3000,
+    open: true
   }
 })

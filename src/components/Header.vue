@@ -1,22 +1,24 @@
 <template>
-  <header class="header" :class="{ scrolled: isScrolled }">
+  <header class="header" :class="{ scrolled: isScrolled }" role="banner">
     <div class="header-top-bar">
-      <a class="header-top-bar-link" href="mailing-list.html">Join Our Mailing List</a>
+      <a class="header-top-bar-link" href="mailing-list.html" aria-label="Join Santa Clarita Symphony Orchestra mailing list for updates">Join Our Mailing List</a>
     </div>
     <div class="header-container">
       <div class="header-logo">
-        <img :src="logoUrl" alt="Santa Clarita Symphony Orchestra">
+        <a href="/" aria-label="Santa Clarita Symphony Orchestra home page">
+          <img :src="logoUrl" alt="Santa Clarita Symphony Orchestra Logo" loading="eager">
+        </a>
       </div>
-      <div class="header-nav">
-        <ul class="header-nav-list">
-          <li><a href="season.html">2025/2026 Season</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="support.html">Support</a></li>
+      <nav class="header-nav" role="navigation" aria-label="Main navigation">
+        <ul class="header-nav-list" role="menubar">
+          <li role="none"><a href="season.html" role="menuitem" aria-label="View 2025/2026 concert season">2025/2026 Season</a></li>
+          <li role="none"><a href="about.html" role="menuitem" aria-label="Learn about Santa Clarita Symphony Orchestra">About</a></li>
+          <li role="none"><a href="support.html" role="menuitem" aria-label="Support Santa Clarita Symphony Orchestra">Support</a></li>
         </ul>
         <div class="header-nav-cta">
-          <a href="https://scso.ludus.com/index.php">Tickets</a>
+          <a href="https://scso.ludus.com/index.php" aria-label="Purchase tickets for Santa Clarita Symphony Orchestra concerts">Tickets</a>
         </div>
-      </div>
+      </nav>
     </div>
   </header>
 </template>

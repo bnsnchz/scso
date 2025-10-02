@@ -1,13 +1,14 @@
 <template>
-  <section class="hero">
+  <section class="hero" role="banner">
     <div class="hero-container">
       <div class="hero-image">
-        <img :src="heroImageUrl" alt="Hero Image">
+        <img :src="heroImageUrl" alt="Santa Clarita Symphony Orchestra performing live classical music on stage" loading="eager">
       </div>
       <div class="hero-content">
-        <img :src="logoUrl" alt="SCSO Logo">
-        <p>Introducing our 2025/2026 season</p>
-        <a class="btn v1" href="https://scso.ludus.com/index.php">Explore Ticket Options</a>
+        <img :src="logoUrl" alt="Santa Clarita Symphony Orchestra Logo" loading="eager">
+        <h1>Introducing our 2025/2026 season</h1>
+        <p class="hero-description">Experience world-class classical music with the Santa Clarita Symphony Orchestra. Join us for an unforgettable season of concerts, featuring our new conductor Martin Alex Arellano and exciting community programs.</p>
+        <a class="btn v1" href="https://scso.ludus.com/index.php" aria-label="Purchase tickets for Santa Clarita Symphony Orchestra concerts">Explore Ticket Options</a>
       </div>
     </div>
   </section>
@@ -64,10 +65,21 @@ export default {
   position: relative;
 }
 
-.hero-content p {
+.hero-content h1 {
   color: #fff;
   font-family: var(--font-headline);
   font-size: 56px;
-  margin: 0;
+  margin: 0 0 16px 0;
+  font-weight: 100;
+  line-height: 1.2;
+}
+
+.hero-description {
+  color: #fff;
+  font-family: var(--font-text);
+  font-size: 18px;
+  margin: 0 0 24px 0;
+  line-height: 1.4;
+  max-width: 400px;
 }
 </style>

@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <Header />
-    <main>
+    <main role="main">
       <Hero />
       <UpcomingEvents :events="upcomingConcerts" />
       <ContentCards />

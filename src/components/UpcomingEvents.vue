@@ -1,26 +1,29 @@
 <template>
-  <section class="upcoming-events">
+  <section class="upcoming-events" aria-labelledby="upcoming-events-heading">
     <div class="st-container">
       <header class="upcoming-events-header st-flex st-flex-between">
-        <h2>Upcoming Events</h2>
-        <a class="btn v2" href="current-season.html">View Calendar</a>
+        <h2 id="upcoming-events-heading">Upcoming Concerts & Events</h2>
+        <a class="btn v2" href="current-season.html" aria-label="View full calendar of Santa Clarita Symphony Orchestra events">View Calendar</a>
       </header>
       <div class="upcoming-events-list">
-        <ul class="upcoming-events-list-items st-flex st-four st-flex-between">
+        <ul class="upcoming-events-list-items st-flex st-four st-flex-between" role="list">
           <li 
             v-for="event in events" 
             :key="event.id" 
             class="event-item st-item"
+            role="listitem"
           >
-            <a :href="event.ticketUrl">
-              <div class="upcoming-events-list-item-image">
-                <img :src="event.image" :alt="event.title">
-              </div>
-              <div class="event-info">
-                <p class="event-title" v-html="event.title"></p>
-                <p class="event-date" v-html="event.date"></p>
-              </div>
-            </a>
+            <article class="event-card">
+              <a :href="event.ticketUrl" :aria-label="`Purchase tickets for ${event.title} on ${event.date}`">
+                <div class="upcoming-events-list-item-image">
+                  <img :src="event.image" :alt="`${event.title} concert poster`" loading="lazy">
+                </div>
+                <div class="event-info">
+                  <h3 class="event-title" v-html="event.title"></h3>
+                  <time class="event-date" :datetime="getEventDateTime(event.date)" v-html="event.date"></time>
+                </div>
+              </a>
+            </article>
           </li>
         </ul>
       </div>
@@ -35,6 +38,14 @@ export default {
     events: {
       type: Array,
       required: true
+    }
+  },
+  methods: {
+    getEventDateTime(dateString) {
+      // Convert "Sunday, October 12" to a proper datetime format
+      const currentYear = new Date().getFullYear()
+      const date = new Date(`${dateString}, ${currentYear}`)
+      return date.toISOString()
     }
   }
 }
@@ -85,10 +96,14 @@ export default {
   font-family: var(--font-headline);
   line-height: 150%;
   margin: 0;
+  font-size: 18px;
+  font-weight: 100;
 }
 
 .event-date {
   font-family: var(--font-text);
   margin: 0;
+  font-size: 14px;
+  opacity: 0.9;
 }
 </style>
