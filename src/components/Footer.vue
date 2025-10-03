@@ -1,7 +1,7 @@
 <template>
   <footer class="footer drk-bg">
     <div class="st-container-lg">
-      <img src="/scso/images/scso-acronym-bgtransparent.png" alt="Santa Clarita Symphony Orchestra Logo" loading="eager">
+      <img src="/images/scso-acronym-bgtransparent.png" alt="Santa Clarita Symphony Orchestra Logo" loading="eager">
       <div class="footer-social-links">
           <a href="https://www.facebook.com/SCSOrchestra" aria-label="Follow Santa Clarita Symphony Orchestra on Facebook">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21">
@@ -17,7 +17,7 @@
           </a>
         </div>
       <div class="lacac-callout">
-        <img src="/scso/public/images/lacac.avif" alt="LACAC Logo" loading="eager">
+        <img src="/images/LACAC.avif" alt="LACAC Logo" loading="eager">
         <p>This organization is supported, in part, by the Los Angeles County Board of Supervisors through the Department of Arts and Culture.</p>
       </div>
       <p class="footer-copyright">&copy; 2025 SCSO. All rights reserved.</p>
