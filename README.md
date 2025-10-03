@@ -1,8 +1,8 @@
-# SCSO Vue.js Version
+# SCSO Vue.js Template
 
-A modern Vue.js implementation of the Santa Clarita Symphony Orchestra website.
+A highly templatized, modern Vue.js implementation designed for maximum reusability across different organizations.
 
-## Features
+## ✨ Features
 
 - 🎨 **Component-based architecture** - Modular, reusable components
 - 📱 **Fully responsive** - Works on all devices
@@ -11,14 +11,25 @@ A modern Vue.js implementation of the Santa Clarita Symphony Orchestra website.
 - 🎯 **SEO-friendly** - Semantic HTML structure
 - ⚡ **Fast development** - Hot reload with Vite
 - 🌐 **GitHub Pages ready** - Automated deployment
+- 🔧 **Highly templatized** - Easy customization for any organization
+- ⚙️ **Configuration-driven** - Centralized config system
+- 🎭 **Multi-tenant ready** - Support for different organizations
 
-## Project Structure
+## 🏗️ Project Structure
 
 ```
 scso/
 ├── public/
 │   └── images/          # All website images
 ├── src/
+│   ├── config/          # Configuration files
+│   │   ├── site.js      # Main site configuration
+│   │   └── environment.js # Environment settings
+│   ├── data/            # Data files
+│   │   └── events.js    # Events and content data
+│   ├── composables/     # Vue composables
+│   │   ├── useSiteConfig.js # Site config composable
+│   │   └── useEvents.js # Events data composable
 │   ├── components/      # Vue components
 │   │   ├── Header.vue
 │   │   ├── Hero.vue
@@ -36,6 +47,8 @@ scso/
 ├── index.html           # HTML template
 ├── package.json         # Dependencies
 ├── vite.config.js       # Vite configuration
+├── env.example          # Environment variables example
+├── TEMPLATE_CUSTOMIZATION.md # Customization guide
 └── README.md           # This file
 ```
 
@@ -147,29 +160,55 @@ If you prefer to deploy manually:
 - State management ready (Pinia)
 - Router ready for multiple pages
 
-## Adding New Events
+## 🎨 Quick Customization
 
-To add new events, simply update the `events` array in `UpcomingEvents.vue`:
+### For a New Organization
+
+1. **Update Organization Info**: Edit `src/config/site.js`
+2. **Replace Images**: Add your logos and images to `public/images/`
+3. **Update Events**: Modify `src/data/events.js`
+4. **Customize Colors**: Change the color scheme in `src/config/site.js`
+5. **Deploy**: Run `npm run build` and deploy
+
+### Key Configuration Files
+
+- **`src/config/site.js`** - Main organization and content configuration
+- **`src/data/events.js`** - Events and concert data
+- **`src/config/environment.js`** - Environment-specific settings
+
+### Adding New Events
+
+Update the events in `src/data/events.js`:
 
 ```javascript
-events: [
+upcomingConcerts: [
   {
     id: 5,
     title: 'New Event Title',
     date: 'Sunday, Date',
+    year: 2025,
     image: '/images/new-event-image.jpg',
-    ticketUrl: 'https://ticket-url.com'
+    ticketUrl: 'https://ticket-url.com',
+    description: 'Event description...',
+    program: ['Piece 1', 'Piece 2']
   }
-  // ... existing events
 ]
 ```
 
+## 📚 Documentation
+
+- **[Template Customization Guide](TEMPLATE_CUSTOMIZATION.md)** - Comprehensive customization documentation
+- **Configuration System** - Centralized config for easy organization changes
+- **Component Architecture** - Modular, reusable Vue components
+- **Environment Support** - Different settings for dev/prod
+
 ## Customization
 
-- **Styles**: Modify CSS variables in `main.css` or component-specific styles
-- **Content**: Update text in individual components
-- **Functionality**: Add new methods to components
-- **Layout**: Modify component templates
+- **Organization Info**: Update `src/config/site.js`
+- **Events & Content**: Modify `src/data/events.js`
+- **Styling**: Change CSS variables in `src/styles/main.css`
+- **Branding**: Replace images and update paths in config
+- **Functionality**: Add new composables and components
 
 ## Browser Support
 

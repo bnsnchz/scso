@@ -3,14 +3,13 @@
     <Header />
     <main role="main">
       <Hero />
-      <UpcomingEvents :events="upcomingConcerts" />
+      <UpcomingEvents :events="processedEvents" />
       <ContentCards />
       <NonProfitBanner />
       <WideContentCard />
       <Newsletter />
       <Footer />
     </main>
-    <!-- <Footer /> -->
   </div>
 </template>
 
@@ -23,6 +22,7 @@ import NonProfitBanner from './components/NonProfitBanner.vue'
 import WideContentCard from './components/WideContentCard.vue'
 import Newsletter from './components/Newsletter.vue'
 import Footer from './components/Footer.vue'
+import { useEvents } from './composables/useEvents.js'
 
 export default {
   name: 'App',
@@ -36,39 +36,12 @@ export default {
     Newsletter,
     Footer
   },
-  data() {
+  setup() {
+    // Use the events composable to get processed events data
+    const { getProcessedUpcomingConcerts } = useEvents()
+    
     return {
-      // Default events data (moved from component)
-      upcomingConcerts: [
-        {
-          id: 1,
-          title: 'New Beginnings',
-          date: 'Sunday, October 12',
-          image: '/scso/images/new-beginnings.avif',
-          ticketUrl: 'https://scso.ludus.com/show_page.php?show_id=200491376'
-        },
-        {
-          id: 2,
-          title: 'Sounds of the Seasons',
-          date: 'Sunday, December 7',
-          image: '/scso/images/sounds-of-the-seaons.avif',
-          ticketUrl: 'https://scso.ludus.com/show_page.php?show_id=200491377'
-        },
-        {
-          id: 3,
-          title: 'Dreams and Desires',
-          date: 'Sunday, March 8',
-          image: '/scso/images/dreams-and-desires.avif',
-          ticketUrl: 'https://scso.ludus.com/show_page.php?show_id=200491379'
-        },
-        {
-          id: 4,
-          title: 'Dances the World Over',
-          date: 'Sunday, June 7',
-          image: '/scso/images/dances-the-world-over.avif',
-          ticketUrl: 'https://scso.ludus.com/show_page.php?show_id=200491380'
-        }
-      ]
+      processedEvents: getProcessedUpcomingConcerts
     }
   }
 }

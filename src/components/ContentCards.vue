@@ -1,27 +1,39 @@
 <template>
   <section class="content-cards drk-bg" aria-labelledby="content-cards-heading">
     <div class="content-cards-container st-container-lg">
-      <h2 id="content-cards-heading" class="sr-only">About SCSO Programs</h2>
+      <h2 id="content-cards-heading" class="sr-only">About {{ organization.shortName }} Programs</h2>
       
       <article class="content-cards-item st-flex st-half st-flex-center">
         <div class="content-cards-item-image image-cont st-item">
-          <img :src="alexImageUrl" alt="Martin Alex Arellano, new conductor of Santa Clarita Symphony Orchestra" loading="lazy">
+          <img :src="contentConfig.about.conductor.image" :alt="`${contentConfig.about.conductor.name}, ${contentConfig.about.conductor.title} of ${organization.name}`" loading="lazy">
         </div>
         <div class="content-cards-item-content cnt-stl st-item">
-          <h3>Martin Alex Arellano</h3>
-          <p>SCSO welcomes our new conductor, Alex Arellano, who will be working closely with Artistic Director Dr. Brian Stone to bring exciting concerts to the Santa Clarita Valley. Experience the fresh energy and artistic vision that Alex brings to our classical music performances.</p>
-          <a class="btn v2" href="/about-us/artistic-teams.html" aria-label="Learn more about Martin Alex Arellano and the SCSO artistic team">Learn More</a>
+          <h3>{{ contentConfig.about.conductor.name }}</h3>
+          <p>{{ contentConfig.about.conductor.description }}</p>
+          <a 
+            class="btn v2" 
+            :href="contentConfig.about.conductor.learnMoreHref" 
+            :aria-label="contentConfig.about.conductor.learnMoreAriaLabel"
+          >
+            Learn More
+          </a>
         </div>
       </article>
       
       <article class="content-cards-item st-flex st-half st-flex-reverse st-flex-center">
         <div class="content-cards-item-image image-cont st-item">
-          <img :src="youthImageUrl" alt="Young musicians performing in Santa Clarita Symphony Orchestra Youth Concerto Competition" loading="lazy">
+          <img :src="contentConfig.about.youthCompetition.image" :alt="`Young musicians performing in ${organization.name} Youth Concerto Competition`" loading="lazy">
         </div>
         <div class="content-cards-item-content cnt-stl st-item">
-          <h3>Youth Concerto Competition 2025</h3>
-          <p>SCSO is pleased to open applications for its second Youth Concerto Competition, open to young instrumentalists in grades 9-12.</p>
-          <a class="btn v2" href="/youth-concerto-competition.html" aria-label="Learn more about the SCSO Youth Concerto Competition and how to apply">Learn More</a>
+          <h3>{{ contentConfig.about.youthCompetition.title }}</h3>
+          <p>{{ contentConfig.about.youthCompetition.description }}</p>
+          <a 
+            class="btn v2" 
+            :href="contentConfig.about.youthCompetition.learnMoreHref" 
+            :aria-label="contentConfig.about.youthCompetition.learnMoreAriaLabel"
+          >
+            Learn More
+          </a>
         </div>
       </article>
     </div>
@@ -29,14 +41,16 @@
 </template>
 
 <script>
+import { useSiteConfig } from '../composables/useSiteConfig.js'
+
 export default {
   name: 'ContentCards',
-  computed: {
-    alexImageUrl() {
-      return '/scso/images/alex-hp.webp'
-    },
-    youthImageUrl() {
-      return '/scso/images/concerto-competition.jpg'
+  setup() {
+    const { organization, getContentConfig } = useSiteConfig()
+    
+    return {
+      organization,
+      contentConfig: getContentConfig()
     }
   }
 }

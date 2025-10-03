@@ -2,27 +2,36 @@
   <section class="hero" role="banner">
     <div class="hero-container">
       <div class="hero-image">
-        <img :src="heroImageUrl" alt="Santa Clarita Symphony Orchestra performing live classical music on stage" loading="eager">
+        <img :src="heroConfig.backgroundImage" :alt="`${organization.name} performing live classical music on stage`" loading="eager">
       </div>
       <div class="hero-content">
-        <img :src="logoUrl" alt="Santa Clarita Symphony Orchestra Logo" loading="eager">
-        <h1>Join us for our 2025/2026 season</h1>
-        <p class="hero-description">Experience the magic of live classical music with Santa Clarita's premier community orchestra. Join us for an unforgettable season of concerts, featuring our new conductor Martin Alex Arellano and celebrating the talented musicians who make our community vibrant through music.</p>
-        <a class="btn v1" href="https://scso.ludus.com/index.php" aria-label="Purchase tickets for Santa Clarita Symphony Orchestra concerts">Explore Ticket Options</a>
+        <img :src="logoUrl" :alt="`${organization.name} Logo`" loading="eager">
+        <h1>{{ heroConfig.title }}</h1>
+        <p class="hero-description">{{ heroConfig.description }}</p>
+        <a 
+          class="btn v1" 
+          :href="heroConfig.cta.href" 
+          :aria-label="heroConfig.cta.ariaLabel"
+        >
+          {{ heroConfig.cta.label }}
+        </a>
       </div>
     </div>
   </section>
 </template>
 
 <script>
+import { useSiteConfig } from '../composables/useSiteConfig.js'
+
 export default {
   name: 'Hero',
-  computed: {
-    heroImageUrl() {
-      return '/scso/images/SCSO-Spring2024-88.webp'
-    },
-    logoUrl() {
-      return '/scso/images/scso-acronym-bgtransparent.png'
+  setup() {
+    const { organization, getLogoUrl, getHeroConfig } = useSiteConfig()
+    
+    return {
+      organization,
+      logoUrl: getLogoUrl('vertical'),
+      heroConfig: getHeroConfig()
     }
   }
 }

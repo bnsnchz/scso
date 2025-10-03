@@ -2,8 +2,14 @@
   <section class="upcoming-events" aria-labelledby="upcoming-events-heading">
     <div class="st-container">
       <header class="upcoming-events-header st-flex st-flex-between">
-        <h2 id="upcoming-events-heading">Upcoming Concerts & Events</h2>
-        <a class="btn v2" href="current-season.html" aria-label="View full calendar of Santa Clarita Symphony Orchestra events">View Calendar</a>
+        <h2 id="upcoming-events-heading">{{ contentConfig.upcomingEvents.title }}</h2>
+        <a 
+          class="btn v2" 
+          :href="contentConfig.upcomingEvents.viewAllHref" 
+          :aria-label="contentConfig.upcomingEvents.viewAllAriaLabel"
+        >
+          {{ contentConfig.upcomingEvents.viewAllLabel }}
+        </a>
       </header>
       <div class="upcoming-events-list">
         <ul class="upcoming-events-list-items st-flex st-four st-flex-between" role="list">
@@ -14,13 +20,13 @@
             role="listitem"
           >
             <article class="event-card">
-              <a :href="event.ticketUrl" :aria-label="`Purchase tickets for ${event.title} on ${event.date}`">
+              <a :href="event.ticketUrl" :aria-label="`Purchase tickets for ${event.title} on ${formatEventDate(event.date, event.year)}`">
                 <div class="upcoming-events-list-item-image">
                   <img :src="event.image" :alt="`${event.title} concert poster`" loading="lazy">
                 </div>
                 <div class="event-info">
                   <h3 class="event-title" v-html="event.title"></h3>
-                  <time class="event-date" :datetime="getEventDateTime(event.date)" v-html="event.date"></time>
+                  <time class="event-date" :datetime="getEventDateTime(event.date, event.year)" v-html="formatEventDate(event.date, event.year)"></time>
                 </div>
               </a>
             </article>
@@ -32,6 +38,9 @@
 </template>
 
 <script>
+import { useSiteConfig } from '../composables/useSiteConfig.js'
+import { useEvents } from '../composables/useEvents.js'
+
 export default {
   name: 'UpcomingEvents',
   props: {
@@ -40,12 +49,14 @@ export default {
       required: true
     }
   },
-  methods: {
-    getEventDateTime(dateString) {
-      // Convert "Sunday, October 12" to a proper datetime format
-      const currentYear = new Date().getFullYear()
-      const date = new Date(`${dateString}, ${currentYear}`)
-      return date.toISOString()
+  setup() {
+    const { getContentConfig } = useSiteConfig()
+    const { formatEventDate, getEventDateTime } = useEvents()
+    
+    return {
+      contentConfig: getContentConfig(),
+      formatEventDate,
+      getEventDateTime
     }
   }
 }

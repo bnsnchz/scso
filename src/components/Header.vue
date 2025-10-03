@@ -1,22 +1,43 @@
 <template>
   <header class="header" :class="{ scrolled: isScrolled }" role="banner">
     <div class="header-top-bar">
-      <a class="header-top-bar-link" href="mailing-list.html" aria-label="Join Santa Clarita Symphony Orchestra mailing list for updates">Join Our Mailing List</a>
+      <a 
+        class="header-top-bar-link" 
+        :href="topBarConfig.href" 
+        :aria-label="topBarConfig.ariaLabel"
+      >
+        {{ topBarConfig.label }}
+      </a>
     </div>
     <div class="header-container">
       <div class="header-logo">
-        <a href="/" aria-label="Santa Clarita Symphony Orchestra home page">
-          <img :src="logoUrl" alt="Santa Clarita Symphony Orchestra Logo" loading="eager">
+        <a href="/" :aria-label="`${organization.name} home page`">
+          <img :src="logoUrl" :alt="`${organization.name} Logo`" loading="eager">
         </a>
       </div>
       <nav class="header-nav" role="navigation" aria-label="Main navigation">
         <ul class="header-nav-list" role="menubar">
-          <li role="none"><a href="season.html" role="menuitem" aria-label="View 2025/2026 concert season">2025/2026 Season</a></li>
-          <li role="none"><a href="about.html" role="menuitem" aria-label="Learn about Santa Clarita Symphony Orchestra">About</a></li>
-          <li role="none"><a href="support.html" role="menuitem" aria-label="Support Santa Clarita Symphony Orchestra">Support</a></li>
+          <li 
+            v-for="item in navItems" 
+            :key="item.label" 
+            role="none"
+          >
+            <a 
+              :href="item.href" 
+              role="menuitem" 
+              :aria-label="item.ariaLabel"
+            >
+              {{ item.label }}
+            </a>
+          </li>
         </ul>
         <div class="header-nav-cta">
-          <a href="https://scso.ludus.com/index.php" aria-label="Purchase tickets for Santa Clarita Symphony Orchestra concerts">Tickets</a>
+          <a 
+            :href="ctaConfig.href" 
+            :aria-label="ctaConfig.ariaLabel"
+          >
+            {{ ctaConfig.label }}
+          </a>
         </div>
       </nav>
     </div>
@@ -24,16 +45,30 @@
 </template>
 
 <script>
+import { useSiteConfig } from '../composables/useSiteConfig.js'
+
 export default {
   name: 'Header',
+  setup() {
+    const { 
+      organization, 
+      getLogoUrl, 
+      getNavItems, 
+      getCtaConfig, 
+      getTopBarConfig 
+    } = useSiteConfig()
+    
+    return {
+      organization,
+      logoUrl: getLogoUrl('horizontal'),
+      navItems: getNavItems(),
+      ctaConfig: getCtaConfig(),
+      topBarConfig: getTopBarConfig()
+    }
+  },
   data() {
     return {
       isScrolled: false
-    }
-  },
-  computed: {
-    logoUrl() {
-      return '/scso/images/scso-logo-horizontal-1500x525.png'
     }
   },
   mounted() {
