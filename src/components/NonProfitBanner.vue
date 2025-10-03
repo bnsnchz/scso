@@ -5,7 +5,7 @@
         <img :src="bannerImageUrl" alt="Community members enjoying Santa Clarita Symphony Orchestra performance" loading="lazy">
       </div>
       <div class="non-profit-banner-content st-center cnt-stl">
-        <h2 id="support-heading">Support the Arts in Santa Clarita Valley</h2>
+        <h2 id="support-heading">Support the Arts in Santa Clarita</h2>
         <p>The Santa Clarita Symphony Orchestra depends on the generosity of our community to bring inspiring live performances to the SCV. Your gift helps us cover everything from sheet music to rehearsal space—ensuring that world-class music continues to flourish right here at home.</p>
         <p>Whether you give once or become a sustaining donor, you're helping create unforgettable experiences for audiences of all ages. Together, we can keep the arts vibrant and accessible for everyone in our community.</p>
         <a class="btn v2" href="https://scso.ludus.com/donate.php" aria-label="Support Santa Clarita Symphony Orchestra through donations">Support Us</a>
