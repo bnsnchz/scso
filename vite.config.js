@@ -4,7 +4,7 @@ import { resolve } from 'path'
 
 export default defineConfig(({ mode }) => ({
   plugins: [vue()],
-  base: mode === 'development' ? '/' : (process.env.VITE_BASE_PATH || '/scso/'),
+  base: mode === 'development' ? '/' : '/scso/',
   resolve: {
     alias: {
       '@': resolve(__dirname, 'src')
