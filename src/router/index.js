@@ -16,7 +16,7 @@ import NotFound from '@/pages/NotFound.vue'
 
 // Router configuration
 const router = createRouter({
-  history: createWebHistory(import.meta.env.PROD ? '/scso/' : '/'), // Match Vite's base path
+  history: createWebHistory(), // Use root path, handle base path in application
   routes: [
     {
       path: '/',
