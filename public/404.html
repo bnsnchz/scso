@@ -17,6 +17,9 @@
       // Store the route in sessionStorage and redirect to main app
       sessionStorage.setItem('vue-router-redirect', route);
       l.replace(l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') + '/scso/');
+    } else if (l.pathname === '/scso' || l.pathname === '/scso/') {
+      // For the homepage, just redirect to the main app
+      l.replace(l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') + '/scso/');
     } else {
       // For other cases, redirect to the main app
       l.replace(l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') + '/scso/');
