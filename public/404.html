@@ -6,13 +6,19 @@
   <title>Santa Clarita Symphony Orchestra</title>
   <script>
     // GitHub Pages SPA fallback
-    // This script redirects to the main app with the current path
-    var pathSegmentsToKeep = 1;
+    // This script redirects to the main app and lets Vue Router handle the routing
     var l = window.location;
+    var pathSegmentsToKeep = 1;
+    
+    // Extract the route from the current path
+    var pathSegments = l.pathname.split('/');
+    var route = pathSegments.slice(pathSegmentsToKeep + 1).join('/');
+    
+    // Redirect to the main app with the route
     l.replace(
       l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
       l.pathname.split('/').slice(0, 1 + pathSegmentsToKeep).join('/') + '/?/' +
-      l.pathname.slice(1).split('/').slice(pathSegmentsToKeep).join('/').replace(/&/g, '~and~') +
+      route.replace(/&/g, '~and~') +
       (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
       l.hash
     );
