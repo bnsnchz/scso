@@ -16,13 +16,14 @@ export default defineConfig(({ mode }) => ({
     rollupOptions: {
       output: {
         manualChunks: {
-          vendor: ['vue']
+          vendor: ['vue', 'vue-router']
         }
       }
     }
   },
   server: {
     port: 3000,
-    open: true
+    open: true,
+    historyApiFallback: true
   }
 }))

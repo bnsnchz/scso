@@ -11,9 +11,9 @@
     </div>
     <div class="header-container">
       <div class="header-logo">
-        <a href="/" :aria-label="`${organization.name} home page`">
+        <router-link to="/" :aria-label="`${organization.name} home page`">
           <img :src="logoUrl" :alt="`${organization.name} Logo`" loading="eager">
-        </a>
+        </router-link>
       </div>
       <nav class="header-nav" role="navigation" aria-label="Main navigation">
         <ul class="header-nav-list" role="menubar">
@@ -22,13 +22,13 @@
             :key="item.label" 
             role="none"
           >
-            <a 
-              :href="item.href" 
+            <router-link 
+              :to="item.href" 
               role="menuitem" 
               :aria-label="item.ariaLabel"
             >
               {{ item.label }}
-            </a>
+            </router-link>
           </li>
         </ul>
         <div class="header-nav-cta">

@@ -40,9 +40,9 @@ export const siteConfig = {
   // Navigation
   navigation: {
     main: [
-      { label: "2025/2026 Season", href: "season.html", ariaLabel: "View 2025/2026 concert season" },
-      { label: "About", href: "about.html", ariaLabel: "Learn about Santa Clarita Symphony Orchestra" },
-      { label: "Support", href: "support.html", ariaLabel: "Support Santa Clarita Symphony Orchestra" }
+      { label: "2025/2026 Season", href: "/season", ariaLabel: "View 2025/2026 concert season" },
+      { label: "About", href: "/about", ariaLabel: "Learn about Santa Clarita Symphony Orchestra" },
+      { label: "Support", href: "/support", ariaLabel: "Support Santa Clarita Symphony Orchestra" }
     ],
     cta: {
       label: "Tickets",
@@ -51,7 +51,7 @@ export const siteConfig = {
     },
     topBar: {
       label: "Join Our Mailing List",
-      href: "mailing-list.html",
+      href: "/mailing-list",
       ariaLabel: "Join Santa Clarita Symphony Orchestra mailing list for updates"
     }
   },
@@ -85,7 +85,7 @@ export const siteConfig = {
     upcomingEvents: {
       title: "Upcoming Concerts & Events",
       viewAllLabel: "View Calendar",
-      viewAllHref: "current-season.html",
+      viewAllHref: "/season",
       viewAllAriaLabel: "View full calendar of Santa Clarita Symphony Orchestra events"
     },
     about: {
@@ -94,14 +94,14 @@ export const siteConfig = {
         title: "New Conductor",
         description: "SCSO welcomes our new conductor, Alex Arellano, who will be working closely with Artistic Director Dr. Brian Stone to bring exciting concerts to the Santa Clarita Valley. Experience the fresh energy and artistic vision that Alex brings to our classical music performances.",
         image: "/images/alex-hp.webp",
-        learnMoreHref: "/about-us/artistic-teams.html",
+        learnMoreHref: "/artistic-team",
         learnMoreAriaLabel: "Learn more about Martin Alex Arellano and the SCSO artistic team"
       },
       youthCompetition: {
         title: "Youth Concerto Competition 2025",
         description: "SCSO is pleased to open applications for its second Youth Concerto Competition, open to young instrumentalists in grades 9-12.",
         image: "/images/concerto-competition.jpg",
-        learnMoreHref: "/youth-concerto-competition.html",
+        learnMoreHref: "/youth-competition",
         learnMoreAriaLabel: "Learn more about the SCSO Youth Concerto Competition and how to apply"
       }
     }
