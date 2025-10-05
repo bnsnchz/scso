@@ -19,7 +19,7 @@ const router = createRouter({
   history: createWebHistory(), // Let Vite handle the base path
   routes: [
     {
-      path: '/',
+      path: '/scso',
       name: 'Home',
       component: Home,
       meta: {
@@ -28,7 +28,7 @@ const router = createRouter({
       }
     },
     {
-      path: '/about',
+      path: '/scso/about',
       name: 'About',
       component: About,
       meta: {
@@ -37,7 +37,7 @@ const router = createRouter({
       }
     },
     {
-      path: '/season',
+      path: '/scso/season',
       name: 'Season',
       component: Season,
       meta: {
@@ -46,7 +46,7 @@ const router = createRouter({
       }
     },
     {
-      path: '/support',
+      path: '/scso/support',
       name: 'Support',
       component: Support,
       meta: {
@@ -55,7 +55,7 @@ const router = createRouter({
       }
     },
     {
-      path: '/mailing-list',
+      path: '/scso/mailing-list',
       name: 'MailingList',
       component: MailingList,
       meta: {
@@ -64,7 +64,7 @@ const router = createRouter({
       }
     },
     {
-      path: '/youth-competition',
+      path: '/scso/youth-competition',
       name: 'YouthCompetition',
       component: YouthCompetition,
       meta: {
@@ -73,7 +73,7 @@ const router = createRouter({
       }
     },
     {
-      path: '/artistic-team',
+      path: '/scso/artistic-team',
       name: 'ArtisticTeam',
       component: ArtisticTeam,
       meta: {
@@ -83,15 +83,15 @@ const router = createRouter({
     },
     // Legacy routes for backward compatibility
     {
-      path: '/current-season',
+      path: '/scso/current-season',
       redirect: '/season'
     },
     {
-      path: '/about-us',
+      path: '/scso/about-us',
       redirect: '/about'
     },
     {
-      path: '/about-us/artistic-teams',
+      path: '/scso/about-us/artistic-teams',
       redirect: '/artistic-team'
     },
     // Catch-all route for 404
