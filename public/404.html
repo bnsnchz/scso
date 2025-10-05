@@ -8,23 +8,22 @@
     // GitHub Pages SPA fallback for Vue Router
     // This script handles client-side routing for the SPA
     var l = window.location;
-    var pathSegmentsToKeep = 1;
     
-    // Extract the route from the current path
-    var pathSegments = l.pathname.split('/');
-    var route = pathSegments.slice(pathSegmentsToKeep + 1).join('/');
-    
-    // Redirect to the main app with the route
-    l.replace(
-      l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
-      l.pathname.split('/').slice(0, 1 + pathSegmentsToKeep).join('/') + '/?/' +
-      route.replace(/&/g, '~and~') +
-      (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
-      l.hash
-    );
+    // Check if we're trying to access a route that doesn't exist as a file
+    if (l.pathname.startsWith('/scso/') && l.pathname !== '/scso/') {
+      // Extract the route after /scso/
+      var route = l.pathname.substring(6); // Remove '/scso/'
+      
+      // Store the route in sessionStorage and redirect to main app
+      sessionStorage.setItem('vue-router-redirect', route);
+      l.replace(l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') + '/scso/');
+    } else {
+      // For other cases, redirect to the main app
+      l.replace(l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') + '/scso/');
+    }
   </script>
 </head>
 <body>
-  <p>Redirecting...</p>
+  <p>Redirecting to the main application...</p>
 </body>
 </html>
