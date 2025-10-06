@@ -1,7 +1,7 @@
 // Vue Router Configuration
 // This file sets up routing for the multipage SCSO application
 
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHashHistory } from 'vue-router'
 import { useSiteConfig } from '@/composables/useSiteConfig.js'
 
 // Import page components
@@ -16,7 +16,7 @@ import NotFound from '@/pages/NotFound.vue'
 
 // Router configuration
 const router = createRouter({
-  history: createWebHistory(), // Let Vite handle the base path completely
+  history: createWebHashHistory(), // Use hash mode for GitHub Pages compatibility
   routes: [
     {
       path: '/',

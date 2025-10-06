@@ -4,17 +4,19 @@
   <meta charset="utf-8">
   <title>Santa Clarita Symphony Orchestra</title>
   <script type="text/javascript">
-    // GitHub Pages SPA fallback for Vue Router
-    // Redirect to the index.html for client-side routing
+    // GitHub Pages SPA fallback for Vue Router with hash mode
+    // Redirect to the index.html with hash routing
     var pathSegmentsToKeep = 1;
     var l = window.location;
-    l.replace(
-      l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
-      l.pathname.split('/').slice(0, 1 + pathSegmentsToKeep).join('/') + '/?/' +
-      l.pathname.slice(1).split('/').slice(pathSegmentsToKeep).join('/').replace(/&/g, '~and~') +
-      (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
-      l.hash
-    );
+    var path = l.pathname.slice(1).split('/').slice(pathSegmentsToKeep).join('/');
+    
+    if (path) {
+      // Redirect to hash mode
+      l.replace(l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') + l.pathname.split('/').slice(0, 1 + pathSegmentsToKeep).join('/') + '/#' + path);
+    } else {
+      // Redirect to home page
+      l.replace(l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') + l.pathname.split('/').slice(0, 1 + pathSegmentsToKeep).join('/') + '/');
+    }
   </script>
 </head>
 <body>
