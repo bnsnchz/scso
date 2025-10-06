@@ -70,14 +70,14 @@ export default {
 
 .page-hero h1 {
   font-size: 3rem;
-  font-weight: 100;
+  font-weight: 600;
   margin-bottom: 24px;
   position: relative;
   z-index: 1;
 }
 
 .hero-description {
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   max-width: 800px;
   margin: 0 auto;
   line-height: 1.6;

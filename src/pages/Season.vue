@@ -3,7 +3,7 @@
     <PageHero
       title="2025/2026 Season"
       description="Experience the magic of live classical music with our upcoming concerts and events"
-      background-image="/images/brian-hero-banner.png"
+      :background-image="getAssetUrl('/images/brian-hero-banner.png')"
       background-image-alt="2025/2026 Season"
     />
     <UpcomingEvents :events="upcomingConcerts" />
