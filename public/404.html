@@ -1,33 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
   <title>Santa Clarita Symphony Orchestra</title>
-  <script>
+  <script type="text/javascript">
     // GitHub Pages SPA fallback for Vue Router
-    // This script handles client-side routing for the SPA
+    // Redirect to the index.html for client-side routing
+    var pathSegmentsToKeep = 1;
     var l = window.location;
-    
-    // Check if we're on a subpage that needs redirecting
-    if (l.pathname.startsWith('/scso/') && l.pathname !== '/scso/') {
-      // Extract the route after /scso/
-      var route = l.pathname.substring(6); // Remove '/scso/'
-      
-      // Redirect to the main app with the route as query parameter
-      l.replace(
-        l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') + '/scso/?/' +
-        route.replace(/&/g, '~and~') +
-        (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
-        l.hash
-      );
-    } else if (l.pathname === '/scso' || l.pathname === '/scso/') {
-      // For the homepage, just redirect to the main app
-      l.replace(l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') + '/scso/');
-    } else {
-      // For other cases, redirect to the main app
-      l.replace(l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') + '/scso/');
-    }
+    l.replace(
+      l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
+      l.pathname.split('/').slice(0, 1 + pathSegmentsToKeep).join('/') + '/?/' +
+      l.pathname.slice(1).split('/').slice(pathSegmentsToKeep).join('/').replace(/&/g, '~and~') +
+      (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
+      l.hash
+    );
   </script>
 </head>
 <body>
