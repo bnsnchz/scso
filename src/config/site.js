@@ -40,9 +40,9 @@ export const siteConfig = {
   // Navigation
   navigation: {
     main: [
-      { label: "2025/2026 Season", href: "/season", ariaLabel: "View 2025/2026 concert season" },
-      { label: "About", href: "/about", ariaLabel: "Learn about Santa Clarita Symphony Orchestra" },
-      { label: "Support", href: "/support", ariaLabel: "Support Santa Clarita Symphony Orchestra" }
+      { label: "2025/2026 Season", href: "season", ariaLabel: "View 2025/2026 concert season" },
+      { label: "About", href: "about", ariaLabel: "Learn about Santa Clarita Symphony Orchestra" },
+      { label: "Support", href: "support", ariaLabel: "Support Santa Clarita Symphony Orchestra" }
     ],
     cta: {
       label: "Tickets",
@@ -51,7 +51,7 @@ export const siteConfig = {
     },
     topBar: {
       label: "Join Our Mailing List",
-      href: "/mailing-list",
+      href: "mailing-list",
       ariaLabel: "Join Santa Clarita Symphony Orchestra mailing list for updates"
     }
   },
