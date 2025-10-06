@@ -73,11 +73,18 @@ export default {
     Footer
   },
   setup() {
-    const currentPath = ref(window.location.hash.slice(1) || '/')
+    // Get the current path from hash, removing any base path
+    const getCurrentPath = () => {
+      const hash = window.location.hash.slice(1) || '/'
+      // Remove /scso/ base path if present
+      return hash.replace(/^\/scso/, '') || '/'
+    }
+    
+    const currentPath = ref(getCurrentPath())
     
     // Update current path when hash changes
     const updatePath = () => {
-      currentPath.value = window.location.hash.slice(1) || '/'
+      currentPath.value = getCurrentPath()
     }
     
     // Get current view component
