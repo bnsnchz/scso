@@ -7,15 +7,15 @@ import './styles/main.css'
 if (window.location.search.includes('?/')) {
   const route = window.location.search.split('?/')[1].replace(/~and~/g, '&');
   // Update the URL without triggering a page reload, ensuring clean URL
-  // Let Vite handle the base path
-  const cleanUrl = '/' + (route || '');
+  // Use the correct base path for GitHub Pages
+  const cleanUrl = '/scso/' + (route || '');
   window.history.replaceState(null, '', cleanUrl);
 } else if (sessionStorage.getItem('vue-router-redirect')) {
   // Handle sessionStorage redirect from 404.html for subpages
   const route = sessionStorage.getItem('vue-router-redirect');
   sessionStorage.removeItem('vue-router-redirect');
   // Update the URL without triggering a page reload
-  const cleanUrl = '/' + (route || '');
+  const cleanUrl = '/scso/' + (route || '');
   window.history.replaceState(null, '', cleanUrl);
 }
 
