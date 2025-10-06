@@ -16,10 +16,10 @@ import NotFound from '@/pages/NotFound.vue'
 
 // Router configuration
 const router = createRouter({
-  history: createWebHistory(), // Let Vite handle the base path
+  history: createWebHistory(import.meta.env.PROD ? '/scso/' : '/'), // Use correct base path for GitHub Pages
   routes: [
     {
-      path: '/scso',
+      path: '/',
       name: 'Home',
       component: Home,
       meta: {
@@ -28,7 +28,7 @@ const router = createRouter({
       }
     },
     {
-      path: '/scso/about',
+      path: '/about',
       name: 'About',
       component: About,
       meta: {
@@ -37,7 +37,7 @@ const router = createRouter({
       }
     },
     {
-      path: '/scso/season',
+      path: '/season',
       name: 'Season',
       component: Season,
       meta: {
@@ -46,7 +46,7 @@ const router = createRouter({
       }
     },
     {
-      path: '/scso/support',
+      path: '/support',
       name: 'Support',
       component: Support,
       meta: {
@@ -55,7 +55,7 @@ const router = createRouter({
       }
     },
     {
-      path: '/scso/mailing-list',
+      path: '/mailing-list',
       name: 'MailingList',
       component: MailingList,
       meta: {
@@ -64,7 +64,7 @@ const router = createRouter({
       }
     },
     {
-      path: '/scso/youth-competition',
+      path: '/youth-competition',
       name: 'YouthCompetition',
       component: YouthCompetition,
       meta: {
@@ -73,7 +73,7 @@ const router = createRouter({
       }
     },
     {
-      path: '/scso/artistic-team',
+      path: '/artistic-team',
       name: 'ArtisticTeam',
       component: ArtisticTeam,
       meta: {
@@ -83,15 +83,15 @@ const router = createRouter({
     },
     // Legacy routes for backward compatibility
     {
-      path: '/scso/current-season',
+      path: '/current-season',
       redirect: '/season'
     },
     {
-      path: '/scso/about-us',
+      path: '/about-us',
       redirect: '/about'
     },
     {
-      path: '/scso/about-us/artistic-teams',
+      path: '/about-us/artistic-teams',
       redirect: '/artistic-team'
     },
     // Catch-all route for 404
