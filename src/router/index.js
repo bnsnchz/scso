@@ -16,7 +16,7 @@ import NotFound from '@/pages/NotFound.vue'
 
 // Router configuration
 const router = createRouter({
-  history: createWebHistory('/scso/'), // Use correct base path for GitHub Pages
+  history: createWebHistory(import.meta.env.PROD ? '/scso/' : '/'), // Use correct base path for GitHub Pages
   routes: [
     {
       path: '/',
