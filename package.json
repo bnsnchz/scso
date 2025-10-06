@@ -10,8 +10,7 @@
     "deploy": "npm run build && gh-pages -d dist"
   },
   "dependencies": {
-    "vue": "^3.2.47",
-    "vue-router": "^4.5.1"
+    "vue": "^3.2.47"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.6.2",

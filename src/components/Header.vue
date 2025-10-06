@@ -3,7 +3,7 @@
     <div class="header-top-bar">
       <a 
         class="header-top-bar-link" 
-        :href="topBarConfig.href" 
+        :href="'#' + topBarConfig.href" 
         :aria-label="topBarConfig.ariaLabel"
       >
         {{ topBarConfig.label }}
@@ -11,9 +11,9 @@
     </div>
     <div class="header-container">
       <div class="header-logo">
-        <router-link to="/scso" :aria-label="`${organization.name} home page`">
+        <a href="#/" :aria-label="`${organization.name} home page`">
           <img :src="logoUrl" :alt="`${organization.name} Logo`" loading="eager">
-        </router-link>
+        </a>
       </div>
       <nav class="header-nav" role="navigation" aria-label="Main navigation">
         <ul class="header-nav-list" role="menubar">
@@ -22,13 +22,13 @@
             :key="item.label" 
             role="none"
           >
-            <router-link 
-              :to="item.href" 
+            <a 
+              :href="'#' + item.href" 
               role="menuitem" 
               :aria-label="item.ariaLabel"
             >
               {{ item.label }}
-            </router-link>
+            </a>
           </li>
         </ul>
         <div class="header-nav-cta">
