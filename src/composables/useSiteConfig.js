@@ -45,7 +45,7 @@ export function useSiteConfig() {
   const getNavItems = () => {
     return navigation.value.main.map(item => ({
       ...item,
-      href: getAssetUrl(item.href)
+      href: item.href // Keep navigation hrefs as-is for hash routing
     }))
   }
 
@@ -63,7 +63,7 @@ export function useSiteConfig() {
   const getTopBarConfig = () => {
     return {
       ...navigation.value.topBar,
-      href: getAssetUrl(navigation.value.topBar.href)
+      href: navigation.value.topBar.href // Keep top bar href as-is for hash routing
     }
   }
 
