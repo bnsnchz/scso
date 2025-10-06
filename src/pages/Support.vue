@@ -1,13 +1,9 @@
 <template>
   <div class="support-page">
-    <section class="page-hero">
-      <div class="st-container">
-        <h1>Support the Santa Clarita Symphony Orchestra</h1>
-        <p class="hero-description">
-          Help us bring world-class classical music to the Santa Clarita Valley community
-        </p>
-      </div>
-    </section>
+    <PageHero
+      title="Support the Santa Clarita Symphony Orchestra"
+      description="Help us bring world-class classical music to the Santa Clarita Valley community"
+    />
 
     <section class="support-content">
       <div class="st-container">
@@ -89,11 +85,13 @@
 import { ref } from 'vue'
 import { useSiteConfig } from '@/composables/useSiteConfig.js'
 import NonProfitBanner from '@/components/NonProfitBanner.vue'
+import PageHero from '@/components/PageHero.vue'
 
 export default {
   name: 'SupportPage',
   components: {
-    NonProfitBanner
+    NonProfitBanner,
+    PageHero
   },
   setup() {
     const { organization } = useSiteConfig()

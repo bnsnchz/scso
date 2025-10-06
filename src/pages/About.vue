@@ -1,13 +1,9 @@
 <template>
   <div class="about-page">
-    <section class="page-hero">
-      <div class="st-container">
-        <h1>About the Santa Clarita Symphony Orchestra</h1>
-        <p class="hero-description">
-          {{ organization.description }}
-        </p>
-      </div>
-    </section>
+    <PageHero
+      title="About the Santa Clarita Symphony Orchestra"
+      :description="organization.description"
+    />
 
     <section class="about-content">
       <div class="st-container">
@@ -63,9 +59,13 @@
 
 <script>
 import { useSiteConfig } from '@/composables/useSiteConfig.js'
+import PageHero from '@/components/PageHero.vue'
 
 export default {
   name: 'AboutPage',
+  components: {
+    PageHero
+  },
   setup() {
     const { organization } = useSiteConfig()
     
@@ -77,25 +77,6 @@ export default {
 </script>
 
 <style scoped>
-.page-hero {
-  background: linear-gradient(135deg, var(--color-flame), var(--color-pistachio));
-  color: white;
-  padding: 80px 0;
-  text-align: center;
-}
-
-.page-hero h1 {
-  font-size: 3rem;
-  font-weight: 100;
-  margin-bottom: 24px;
-}
-
-.hero-description {
-  font-size: 1.25rem;
-  max-width: 800px;
-  margin: 0 auto;
-  line-height: 1.6;
-}
 
 .about-content {
   padding: 80px 0;
@@ -167,10 +148,6 @@ export default {
   .about-grid {
     grid-template-columns: 1fr;
     gap: 40px;
-  }
-  
-  .page-hero h1 {
-    font-size: 2.5rem;
   }
 }
 </style>

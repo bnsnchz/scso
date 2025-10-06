@@ -1,7 +1,7 @@
 <template>
-  <div id="app">
+  <div id="app" :class="`page-${pageName.toLowerCase()} main`">
     <Header />
-    <main role="main">
+    <main role="main" :class="`page-${pageName.toLowerCase()}`">
       <router-view />
     </main>
     <Footer />
@@ -9,6 +9,7 @@
 </template>
 
 <script>
+import { usePageName } from '@/composables/usePageName.js'
 import Header from './components/Header.vue'
 import Footer from './components/Footer.vue'
 
@@ -17,6 +18,16 @@ export default {
   components: {
     Header,
     Footer
+  },
+  setup() {
+    const { pageName, pageTitle, pageDescription, documentTitle } = usePageName()
+    
+    return {
+      pageName,
+      pageTitle,
+      pageDescription,
+      documentTitle
+    }
   }
 }
 </script>

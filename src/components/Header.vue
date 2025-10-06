@@ -11,7 +11,7 @@
     </div>
     <div class="header-container">
       <div class="header-logo">
-        <router-link to="/" :aria-label="`${organization.name} home page`">
+        <router-link to="/scso" :aria-label="`${organization.name} home page`">
           <img :src="logoUrl" :alt="`${organization.name} Logo`" loading="eager">
         </router-link>
       </div>
@@ -90,8 +90,17 @@ export default {
   position: fixed;
   width: 100%;
   z-index: 999;
-  background-color: transparent;
+  background-color: #fff;
   transition: all .25s ease 0s;
+}
+
+/* Hide header when scrolled on non-Home pages */
+.main:not(.page-home) .header.scrolled {
+  transform: translateY(-100%);
+}
+
+.page-home .header {
+  background-color: transparent;
 }
 
 .header.scrolled {
@@ -103,10 +112,18 @@ export default {
   justify-content: space-between;
   padding: 12px 32px;
   align-items: center;
+  background-color: #fff;
+}
+
+.page-home .header-container {
   background-color: transparent;
 }
 
 .header-logo img {
+  max-width: 250px;
+}
+
+.page-home .header-logo img {
   max-width: 400px;
   transition: all .25s ease 0s;
 }
@@ -130,9 +147,13 @@ ul.header-nav-list {
 
 .header-nav-list li a {
   font-family: var(--font-headline);
-  color: #fff;
+  color: #000;
   transition: all .25s ease 0s;
   text-decoration: none;
+}
+
+.page-home .header-nav-list li a {
+  color: #fff;
 }
 
 .header.scrolled .header-nav-list li a {

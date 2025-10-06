@@ -69,6 +69,10 @@ export default {
   position: relative;
 }
 
+.main:not(.page-home) .upcoming-events {
+  margin-top: 0;
+}
+
 .upcoming-events-header {
   margin-bottom: 24px;
 }

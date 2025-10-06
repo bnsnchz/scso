@@ -1,13 +1,9 @@
 <template>
   <div class="youth-competition-page">
-    <section class="page-hero">
-      <div class="st-container">
-        <h1>Youth Concerto Competition 2025</h1>
-        <p class="hero-description">
-          Open to young instrumentalists in grades 9-12. Winners will perform with the orchestra in our spring concert.
-        </p>
-      </div>
-    </section>
+    <PageHero
+      title="Youth Concerto Competition 2025"
+      description="Open to young instrumentalists in grades 9-12. Winners will perform with the orchestra in our spring concert."
+    />
 
     <section class="competition-content">
       <div class="st-container">
@@ -174,9 +170,13 @@
 
 <script>
 import { ref } from 'vue'
+import PageHero from '@/components/PageHero.vue'
 
 export default {
   name: 'YouthCompetitionPage',
+  components: {
+    PageHero
+  },
   setup() {
     const isSubmitting = ref(false)
     const application = ref({

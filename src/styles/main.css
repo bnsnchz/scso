@@ -289,3 +289,7 @@ p, .st-p {
 .fade-enter-from, .fade-leave-to {
   opacity: 0;
 }
+
+main:not(.page-home) {
+  padding-top: 158px;
+}
