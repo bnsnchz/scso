@@ -89,12 +89,12 @@ export function useSiteConfig() {
         conductor: {
           ...content.value.about.conductor,
           image: getAssetUrl(content.value.about.conductor.image),
-          learnMoreHref: getAssetUrl(content.value.about.conductor.learnMoreHref)
+          learnMoreHref: content.value.about.conductor.learnMoreHref // Keep navigation hrefs as-is for hash routing
         },
         youthCompetition: {
           ...content.value.about.youthCompetition,
           image: getAssetUrl(content.value.about.youthCompetition.image),
-          learnMoreHref: getAssetUrl(content.value.about.youthCompetition.learnMoreHref)
+          learnMoreHref: content.value.about.youthCompetition.learnMoreHref // Keep navigation hrefs as-is for hash routing
         }
       }
     }
