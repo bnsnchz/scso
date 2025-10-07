@@ -1,39 +1,36 @@
 <template>
-  <section class="content-cards drk-bg" aria-labelledby="content-cards-heading">
-    <div class="content-cards-container st-container-lg">
-      <h2 id="content-cards-heading" class="sr-only">About {{ organization.shortName }} Programs</h2>
+  <section class="content-cards" :class="backgroundClass" :aria-labelledby="sectionId">
+    <div class="content-cards-container" :class="containerClass">
+      <h2 :id="sectionId" class="sr-only">{{ sectionTitle }}</h2>
       
-      <article class="content-cards-item st-flex st-half st-flex-center">
+      <article 
+        v-for="(card, index) in cards" 
+        :key="card.id || index"
+        class="content-cards-item st-flex st-half st-flex-center"
+        :class="{ 'st-flex-reverse': card.reverse }"
+      >
         <div class="content-cards-item-image image-cont st-item">
-          <img :src="contentConfig.about.conductor.image" :alt="`${contentConfig.about.conductor.name}, ${contentConfig.about.conductor.title} of ${organization.name}`" loading="lazy">
+          <img 
+            :src="card.image" 
+            :alt="card.imageAlt" 
+            loading="lazy"
+          >
         </div>
         <div class="content-cards-item-content cnt-stl st-item">
-          <h3>{{ contentConfig.about.conductor.name }}</h3>
-          <p>{{ contentConfig.about.conductor.description }}</p>
-          <router-link 
-            class="btn v2" 
-            :to="contentConfig.about.conductor.learnMoreHref" 
-            :aria-label="contentConfig.about.conductor.learnMoreAriaLabel"
+          <h3>{{ card.title }}</h3>
+          <p v-if="card.subtitle">{{ card.subtitle }}</p>
+          <p>{{ card.description }}</p>
+          <component 
+            :is="card.linkType === 'external' ? 'a' : 'router-link'"
+            :class="card.buttonClass || 'btn v2'"
+            :to="card.linkType === 'external' ? undefined : card.linkHref"
+            :href="card.linkType === 'external' ? card.linkHref : undefined"
+            :aria-label="card.linkAriaLabel"
+            :target="card.linkType === 'external' ? '_blank' : undefined"
+            :rel="card.linkType === 'external' ? 'noopener noreferrer' : undefined"
           >
-            Learn More
-          </router-link>
-        </div>
-      </article>
-      
-      <article class="content-cards-item st-flex st-half st-flex-reverse st-flex-center">
-        <div class="content-cards-item-image image-cont st-item">
-          <img :src="contentConfig.about.youthCompetition.image" :alt="`Young musicians performing in ${organization.name} Youth Concerto Competition`" loading="lazy">
-        </div>
-        <div class="content-cards-item-content cnt-stl st-item">
-          <h3>{{ contentConfig.about.youthCompetition.title }}</h3>
-          <p>{{ contentConfig.about.youthCompetition.description }}</p>
-          <router-link 
-            class="btn v2" 
-            :to="contentConfig.about.youthCompetition.learnMoreHref" 
-            :aria-label="contentConfig.about.youthCompetition.learnMoreAriaLabel"
-          >
-            Learn More
-          </router-link>
+            {{ card.linkText }}
+          </component>
         </div>
       </article>
     </div>
@@ -45,12 +42,37 @@ import { useSiteConfig } from '../composables/useSiteConfig.js'
 
 export default {
   name: 'ContentCards',
+  props: {
+    // Card data array
+    cards: {
+      type: Array,
+      required: true,
+      default: () => []
+    },
+    // Section configuration
+    sectionTitle: {
+      type: String,
+      default: 'Content Cards'
+    },
+    sectionId: {
+      type: String,
+      default: 'content-cards-heading'
+    },
+    // Styling options
+    backgroundClass: {
+      type: String,
+      default: 'drk-bg'
+    },
+    containerClass: {
+      type: String,
+      default: 'st-container-lg'
+    }
+  },
   setup() {
-    const { organization, getContentConfig } = useSiteConfig()
+    const { organization } = useSiteConfig()
     
     return {
-      organization,
-      contentConfig: getContentConfig()
+      organization
     }
   }
 }

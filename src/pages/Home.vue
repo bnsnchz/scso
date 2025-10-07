@@ -2,7 +2,11 @@
   <div class="home-page">
     <Hero />
     <UpcomingEvents :events="upcomingConcerts" />
-    <ContentCards />
+    <ContentCards 
+      :cards="contentCards"
+      section-title="About SCSO Programs"
+      section-id="home-content-cards"
+    />
     <NonProfitBanner />
     <WideContentCard />
   </div>
@@ -10,6 +14,7 @@
 
 <script>
 import { useEvents } from '@/composables/useEvents.js'
+import { useSiteConfig } from '@/composables/useSiteConfig.js'
 import Hero from '@/components/Hero.vue'
 import UpcomingEvents from '@/components/UpcomingEvents.vue'
 import ContentCards from '@/components/ContentCards.vue'
@@ -27,9 +32,11 @@ export default {
   },
   setup() {
     const { getProcessedUpcomingConcerts } = useEvents()
+    const { getContentCards } = useSiteConfig()
     
     return {
-      upcomingConcerts: getProcessedUpcomingConcerts
+      upcomingConcerts: getProcessedUpcomingConcerts,
+      contentCards: getContentCards()
     }
   }
 }

@@ -40,7 +40,7 @@ export default {
 .page-hero {
   background: linear-gradient(135deg, var(--color-flame), var(--color-pistachio));
   color: white;
-  padding: 160px 0;;
+  padding: 185px 0;;
   text-align: center;
   position: relative;
 }

@@ -96,6 +96,25 @@ export function useSiteConfig() {
           image: getAssetUrl(content.value.about.youthCompetition.image),
           learnMoreHref: content.value.about.youthCompetition.learnMoreHref // Keep navigation hrefs as-is for Vue Router
         }
+      },
+      artisticTeam: {
+        ...content.value.artisticTeam,
+        conductor: {
+          ...content.value.artisticTeam.conductor,
+          title: content.value.artisticTeam.conductor.title,
+          name: content.value.artisticTeam.conductor.name,
+          description: content.value.artisticTeam.conductor.description,
+          image: getAssetUrl(content.value.artisticTeam.conductor.image),
+          learnMoreHref: content.value.artisticTeam.conductor.learnMoreHref // Keep navigation hrefs as-is for Vue Router
+        },
+        artisticDirector: {
+          ...content.value.artisticTeam.artisticDirector,
+          title: content.value.artisticTeam.artisticDirector.title,
+          name: content.value.artisticTeam.artisticDirector.name,
+          description: content.value.artisticTeam.artisticDirector.description,
+          image: getAssetUrl(content.value.artisticTeam.artisticDirector.image),
+          learnMoreHref: content.value.artisticTeam.artisticDirector.learnMoreHref // Keep navigation hrefs as-is for Vue Router
+        }
       }
     }
   }
@@ -119,6 +138,67 @@ export function useSiteConfig() {
   // Method to reset configuration to defaults
   const resetConfig = () => {
     config.value = siteConfig
+  }
+
+  // Helper function to generate content cards data
+  const getContentCards = () => {
+    return [
+      {
+        id: 'conductor',
+        title: content.value.about.conductor.name,
+        description: content.value.about.conductor.description,
+        image: getAssetUrl(content.value.about.conductor.image),
+        imageAlt: `${content.value.about.conductor.name}, ${content.value.about.conductor.title} of ${organization.value.name}`,
+        linkHref: content.value.about.conductor.learnMoreHref,
+        linkText: 'Learn More',
+        linkAriaLabel: content.value.about.conductor.learnMoreAriaLabel,
+        linkType: 'internal',
+        reverse: false
+      },
+      {
+        id: 'youth-competition',
+        title: content.value.about.youthCompetition.title,
+        description: content.value.about.youthCompetition.description,
+        image: getAssetUrl(content.value.about.youthCompetition.image),
+        imageAlt: `Young musicians performing in ${organization.value.name} Youth Concerto Competition`,
+        linkHref: content.value.about.youthCompetition.learnMoreHref,
+        linkText: 'Learn More',
+        linkAriaLabel: content.value.about.youthCompetition.learnMoreAriaLabel,
+        linkType: 'internal',
+        reverse: true
+      }
+    ]
+  }
+
+  const getArtisticTeamCards = () => {
+    return [
+      {
+        id: 'artistic-team-brian',
+        title: content.value.artisticTeam.artisticDirector.name,
+        subtitle: content.value.artisticTeam.artisticDirector.title,
+        description: content.value.artisticTeam.artisticDirector.description,
+        image: getAssetUrl(content.value.artisticTeam.artisticDirector.image),
+        imageAlt: `${content.value.artisticTeam.artisticDirector.name}, ${content.value.artisticTeam.artisticDirector.title} of ${organization.value.name}`,
+        linkHref: content.value.artisticTeam.artisticDirector.learnMoreHref,
+        linkText: 'Read More',
+        linkAriaLabel: content.value.artisticTeam.artisticDirector.learnMoreAriaLabel,
+        linkType: 'internal',
+        reverse: false
+      },
+      {
+        id: 'artistic-team-alex',
+        title: content.value.artisticTeam.conductor.name,
+        subtitle: content.value.artisticTeam.conductor.title,
+        description: content.value.artisticTeam.conductor.description,
+        image: getAssetUrl(content.value.artisticTeam.conductor.image),
+        imageAlt: `${content.value.artisticTeam.conductor.name}, ${content.value.artisticTeam.conductor.title} of ${organization.value.name}`,
+        linkHref: content.value.artisticTeam.conductor.learnMoreHref,
+        linkText: 'Read More',
+        linkAriaLabel: content.value.artisticTeam.conductor.learnMoreAriaLabel,
+        linkType: 'internal',
+        reverse: true
+      }
+    ]
   }
 
   return {
@@ -146,7 +226,8 @@ export function useSiteConfig() {
     getHeroConfig,
     getContentConfig,
     getFooterConfig,
-    
+    getContentCards,
+    getArtisticTeamCards,
     // Configuration management
     updateConfig,
     resetConfig

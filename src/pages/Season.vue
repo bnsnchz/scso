@@ -15,6 +15,7 @@
       has-background
     />
   </div>
+  <Newsletter />
 </template>
 
 <script>
@@ -23,13 +24,15 @@ import { useSiteConfig } from '@/composables/useSiteConfig.js'
 import UpcomingEvents from '@/components/UpcomingEvents.vue'
 import PageHero from '@/components/PageHero.vue'
 import SplitContent from '@/components/SplitContent.vue'
+import Newsletter from '@/components/Newsletter.vue'
 
 export default {
   name: 'SeasonPage',
   components: {
     UpcomingEvents,
     PageHero,
-    SplitContent
+    SplitContent,
+    Newsletter
   },
   setup() {
     const { getProcessedUpcomingConcerts } = useEvents()

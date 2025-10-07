@@ -104,6 +104,24 @@ export const siteConfig = {
         learnMoreHref: "/youth-competition",
         learnMoreAriaLabel: "Learn more about the SCSO Youth Concerto Competition and how to apply"
       }
+    },
+    artisticTeam: {
+      artisticDirector: {
+        title: "Artistic Director",
+        name: "Dr. Brian Stone",
+        description: "Prize-winning conductor and award-winning teacher Brian Stone has worked both in the opera pit and on the concert stage with professional orchestras and universities all over the world.",
+        image: "/images/brian-stone.avif",
+        learnMoreHref: "/brian-stone",
+        learnMoreAriaLabel: "Learn more about Dr. Brian Stone"
+      },
+      conductor: {
+        title: "Conductor",
+        name: "Martin Alex Arellano",
+        description: "Martín Alexander Arellano is an award winning conductor and composer of Nicaraguan & Mexican descent, from California.. He is a triple laureate of the 2024 American Prize—winning in Opera Conducting, taking 2nd place in Community Orchestra Conducting, and 3rd place in Musical Theater Conducting—and in 2023.",
+        image: "/images/alex-hs.webp",
+        learnMoreHref: "/alex-arellano",
+        learnMoreAriaLabel: "Learn more about Martin Alex Arellano"
+      }
     }
   },
 
