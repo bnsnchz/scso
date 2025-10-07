@@ -8,6 +8,8 @@
   --color-flame: #E06126;
   --color-carrot: #F7941D;
   --color-black: #060201;
+  --color-dark: #333333;
+  --color-light-gray: #f8f9fa;
   --font-headline: 'Berlin Sans FB', sans-serif;
   --font-text: 'Roboto Light', sans-serif;
   --var-container-width: 1200px;
@@ -38,12 +40,6 @@ section {
 
 img {
   max-width: 100%;
-}
-
-ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
 }
 
 a {
@@ -209,6 +205,15 @@ h2, .st-h2 {
   text-transform: uppercase;
 }
 
+h3, .st-h3 {
+  font-family: var(--font-text);
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.2;
+  margin: 0;
+  text-transform: uppercase;
+}
+
 
 p, .st-p {
   font-family: var(--font-text);
@@ -267,12 +272,20 @@ p, .st-p {
   margin: 0;
   text-transform: uppercase;
   margin-bottom: 24px;
+  text-align: center;
 }
+
+.cnt-stl h3 {
+  margin: 48px 0 24px 0;
+}
+
 .cnt-stl p, 
 .cnt-stl strong {
-  font-size: 22px;
-  line-height: 1.5;
+  font-size: 1.1rem;
+  line-height: 1.7;
   font-weight: 100;
+  margin-bottom: 24px;
+  color: var(--color-dark);
 }
 
 .cnt-stl strong {

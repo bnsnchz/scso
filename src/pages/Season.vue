@@ -6,7 +6,7 @@
       :background-image="getAssetUrl('/images/brian-hero-banner.png')"
       background-image-alt="2025/2026 Season"
     />
-    <UpcomingEvents :events="upcomingConcerts" />
+    <UpcomingEvents :events="upcomingConcerts" class="upcoming-events" />
     <SplitContent
       title="Our Concert Home"
       :content="venueContent"
@@ -50,59 +50,18 @@ export default {
 </script>
 
 <style scoped>
-
-.upcoming-events-header .btn.v2 {
+/* Hide the "View Calendar" button on the Season page since we're already on the season page */
+.upcoming-events :deep(.btn.v2) {
   display: none;
 }
 
-.season-content {
-  padding: 80px 0;
+/* Season page specific styles */
+.season-page {
+  min-height: 100vh;
 }
 
-.season-highlights {
-  margin: 80px 0;
-}
-
-.season-highlights h2 {
-  color: var(--color-flame);
-  font-size: 2.5rem;
-  text-align: center;
-  margin-bottom: 60px;
-}
-
-.highlights-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 40px;
-  margin-bottom: 80px;
-}
-
-.highlight-card {
-  background: white;
-  padding: 40px;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  transition: transform 0.3s ease;
-}
-
-.highlight-card:hover {
-  transform: translateY(-5px);
-}
-
-.highlight-card h3 {
-  color: var(--color-flame);
-  font-size: 1.5rem;
-  margin-bottom: 20px;
-}
-
-.highlight-card p {
-  margin-bottom: 30px;
-  line-height: 1.6;
-}
-
-
-@media (max-width: 768px) {
-  /* Mobile styles handled by SplitContent component */
+/* Ensure proper spacing between sections */
+.season-page > * + * {
+  margin-top: 0;
 }
 </style>

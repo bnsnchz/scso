@@ -70,6 +70,11 @@ export default {
   color: #fff;
 }
 
+.newsletter-container h3 {
+  margin-bottom: 24px;
+  text-align: center;
+}
+
 .newsletter-form {
   gap: 16px;
   align-items: center;
