@@ -4,19 +4,23 @@
   <meta charset="utf-8">
   <title>Santa Clarita Symphony Orchestra</title>
   <script type="text/javascript">
-    // GitHub Pages SPA fallback for Vue Router with hash mode
-    // Redirect to the index.html with hash routing
+    // GitHub Pages SPA fallback for Vue Router with history mode
+    // Redirect to the index.html with the current path
     var pathSegmentsToKeep = 1;
     var l = window.location;
     var path = l.pathname.slice(1).split('/').slice(pathSegmentsToKeep).join('/');
     
+    // Build the redirect URL
+    var basePath = l.pathname.split('/').slice(0, 1 + pathSegmentsToKeep).join('/');
+    var redirectUrl = l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') + basePath + '/';
+    
     if (path) {
-      // Redirect to hash mode
-      l.replace(l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') + l.pathname.split('/').slice(0, 1 + pathSegmentsToKeep).join('/') + '/#' + path);
-    } else {
-      // Redirect to home page
-      l.replace(l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') + l.pathname.split('/').slice(0, 1 + pathSegmentsToKeep).join('/') + '/');
+      // Add the path as a query parameter for Vue Router to handle
+      redirectUrl += '?redirect=' + encodeURIComponent('/' + path);
     }
+    
+    // Redirect to the main app
+    l.replace(redirectUrl);
   </script>
 </head>
 <body>

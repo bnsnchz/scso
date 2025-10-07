@@ -45,7 +45,7 @@ export function useSiteConfig() {
   const getNavItems = () => {
     return navigation.value.main.map(item => ({
       ...item,
-      href: item.href // Keep navigation hrefs as-is for hash routing
+      href: item.href // Keep navigation hrefs as-is for Vue Router
     }))
   }
 
@@ -63,7 +63,7 @@ export function useSiteConfig() {
   const getTopBarConfig = () => {
     return {
       ...navigation.value.topBar,
-      href: navigation.value.topBar.href // Keep top bar href as-is for hash routing
+      href: navigation.value.topBar.href // Keep top bar href as-is for Vue Router
     }
   }
 
@@ -89,12 +89,12 @@ export function useSiteConfig() {
         conductor: {
           ...content.value.about.conductor,
           image: getAssetUrl(content.value.about.conductor.image),
-          learnMoreHref: content.value.about.conductor.learnMoreHref // Keep navigation hrefs as-is for hash routing
+          learnMoreHref: content.value.about.conductor.learnMoreHref // Keep navigation hrefs as-is for Vue Router
         },
         youthCompetition: {
           ...content.value.about.youthCompetition,
           image: getAssetUrl(content.value.about.youthCompetition.image),
-          learnMoreHref: content.value.about.youthCompetition.learnMoreHref // Keep navigation hrefs as-is for hash routing
+          learnMoreHref: content.value.about.youthCompetition.learnMoreHref // Keep navigation hrefs as-is for Vue Router
         }
       }
     }

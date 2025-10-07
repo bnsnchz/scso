@@ -25,5 +25,10 @@ export default defineConfig(({ mode }) => ({
     port: 3000,
     open: true,
     historyApiFallback: true
+  },
+  preview: {
+    port: 3000,
+    open: true,
+    historyApiFallback: true
   }
 }))
