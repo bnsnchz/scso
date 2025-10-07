@@ -88,7 +88,7 @@ const routes = [
 
 // Create router instance
 const router = createRouter({
-  history: createWebHistory('/'),
+  history: createWebHistory(import.meta.env.MODE === 'production' ? '/scso/' : '/'),
   routes,
   scrollBehavior(to, from, savedPosition) {
     // Always scroll to top when navigating to a new route
