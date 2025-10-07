@@ -51,6 +51,10 @@ export default {
 
 <style scoped>
 
+.upcoming-events-header .btn.v2 {
+  display: none;
+}
+
 .season-content {
   padding: 80px 0;
 }
