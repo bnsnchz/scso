@@ -10,13 +10,13 @@
         <div class="content-cards-item-content cnt-stl st-item">
           <h3>{{ contentConfig.about.conductor.name }}</h3>
           <p>{{ contentConfig.about.conductor.description }}</p>
-          <a 
+          <router-link 
             class="btn v2" 
-            :href="contentConfig.about.conductor.learnMoreHref" 
+            :to="contentConfig.about.conductor.learnMoreHref" 
             :aria-label="contentConfig.about.conductor.learnMoreAriaLabel"
           >
             Learn More
-          </a>
+          </router-link>
         </div>
       </article>
       
@@ -27,13 +27,13 @@
         <div class="content-cards-item-content cnt-stl st-item">
           <h3>{{ contentConfig.about.youthCompetition.title }}</h3>
           <p>{{ contentConfig.about.youthCompetition.description }}</p>
-          <a 
+          <router-link 
             class="btn v2" 
-            :href="contentConfig.about.youthCompetition.learnMoreHref" 
+            :to="contentConfig.about.youthCompetition.learnMoreHref" 
             :aria-label="contentConfig.about.youthCompetition.learnMoreAriaLabel"
           >
             Learn More
-          </a>
+          </router-link>
         </div>
       </article>
     </div>

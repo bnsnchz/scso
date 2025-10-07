@@ -3,13 +3,13 @@
     <div class="st-container">
       <header class="upcoming-events-header st-flex st-flex-between">
         <h2 id="upcoming-events-heading">{{ contentConfig.upcomingEvents.title }}</h2>
-        <a 
+        <router-link 
           class="btn v2" 
-          :href="contentConfig.upcomingEvents.viewAllHref" 
+          :to="contentConfig.upcomingEvents.viewAllHref" 
           :aria-label="contentConfig.upcomingEvents.viewAllAriaLabel"
         >
           {{ contentConfig.upcomingEvents.viewAllLabel }}
-        </a>
+        </router-link>
       </header>
       <div class="upcoming-events-list">
         <ul class="upcoming-events-list-items st-flex st-four st-flex-between" role="list">
