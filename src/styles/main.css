@@ -63,6 +63,13 @@ button {
   cursor: pointer;
 }
 
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+
 /* Utility Classes */
 
 .st-flex {
@@ -292,6 +299,15 @@ p, .st-p {
   font-weight: 600;
   display: block;
   margin-bottom: 8px;
+}
+
+.cnt-stl ul {
+  list-style: disc;
+  padding-left: 20px;
+}
+
+.cnt-stl ul li {
+  margin-bottom: 10px;
 }
 
 /* Loading animation */
@@ -569,7 +585,7 @@ main:not(.page-home) {
   .cnt-stl strong {
     font-size: 14px;
   }
-  
+
   .image-cont {
     --_var-img-height: 160px;
   }
