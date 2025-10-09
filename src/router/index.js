@@ -8,6 +8,8 @@ import Support from '../pages/Support.vue'
 import MailingList from '../pages/MailingList.vue'
 import YouthCompetition from '../pages/YouthCompetition.vue'
 import ArtisticTeam from '../pages/ArtisticTeam.vue'
+import BrianStone from '../pages/BrianStone.vue'
+import AlexArellano from '../pages/AlexArellano.vue'
 import NotFound from '../pages/NotFound.vue'
 
 // Define routes
@@ -67,11 +69,29 @@ const routes = [
     }
   },
   {
-    path: '/artistic-team',
+    path: '/about/artistic-team',
     name: 'ArtisticTeam',
     component: ArtisticTeam,
     meta: {
       title: 'Artistic Team',
+      description: 'Meet our conductor, Martin Alex Arellano, and learn about our artistic leadership'
+    }
+  },
+  {
+    path: '/about/brian-stone',
+    name: 'BrianStone',
+    component: BrianStone,
+    meta: {
+      title: 'Brian Stone',
+      description: 'Learn about our artistic director, Dr. Brian Stone'
+    }
+  },
+  {
+    path: '/about/alex-arellano',
+    name: 'AlexArellano',
+    component: AlexArellano,
+    meta: {
+      title: 'Alex Arellano',
       description: 'Meet our conductor, Martin Alex Arellano, and learn about our artistic leadership'
     }
   },

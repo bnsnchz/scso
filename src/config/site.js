@@ -94,7 +94,7 @@ export const siteConfig = {
         title: "New Conductor",
         description: "SCSO welcomes our new conductor, Alex Arellano, who will be working closely with Artistic Director Dr. Brian Stone to bring exciting concerts to the Santa Clarita Valley. Experience the fresh energy and artistic vision that Alex brings to our classical music performances.",
         image: "/images/alex-hp.webp",
-        learnMoreHref: "/artistic-team",
+        learnMoreHref: "/about/artistic-team",
         learnMoreAriaLabel: "Learn more about Martin Alex Arellano and the SCSO artistic team"
       },
       youthCompetition: {
@@ -110,8 +110,8 @@ export const siteConfig = {
         title: "Artistic Director",
         name: "Dr. Brian Stone",
         description: "Prize-winning conductor and award-winning teacher Brian Stone has worked both in the opera pit and on the concert stage with professional orchestras and universities all over the world.",
-        image: "/images/brian-stone.avif",
-        learnMoreHref: "/brian-stone",
+        image: "/images/brian-hs.jpg",
+        learnMoreHref: "/about/brian-stone",
         learnMoreAriaLabel: "Learn more about Dr. Brian Stone"
       },
       conductor: {
@@ -119,7 +119,7 @@ export const siteConfig = {
         name: "Martin Alex Arellano",
         description: "Martín Alexander Arellano is an award winning conductor and composer of Nicaraguan & Mexican descent, from California.. He is a triple laureate of the 2024 American Prize—winning in Opera Conducting, taking 2nd place in Community Orchestra Conducting, and 3rd place in Musical Theater Conducting—and in 2023.",
         image: "/images/alex-hs.webp",
-        learnMoreHref: "/alex-arellano",
+        learnMoreHref: "/about/alex-arellano",
         learnMoreAriaLabel: "Learn more about Martin Alex Arellano"
       }
     }
