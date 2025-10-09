@@ -9,65 +9,11 @@
         <div class="st-container board-staff-container">
             <div class="board-staff">
                 <ul class="board-staff-list st-flex st-half">
-                    <li class="board-staff-item st-item st-flex st-half">
-                       <div class="image-cont st-item">
-                            <img src="/images/jr.avif" alt="J.R. Hills" />
-                       </div> 
-                       <div class="board-staff-content st-item">
-                            <p class="title">President</p>
-                            <h3>J.R. Hills</h3>
-                            <a href="mailto:jr.hills@santaclaritasymphonyorchestra.org">jr.hills@santaclaritasymphonyorchestra.org</a>
-                       </div>
-                    </li>
-                    <li class="board-staff-item st-item st-flex st-half">
-                       <div class="image-cont st-item">
-                            <img src="/images/bess.avif" alt="Bess Knight" />
-                       </div> 
-                       <div class="board-staff-content st-item">
-                            <p class="title">Secretary</p>
-                            <h3>Bess Knight</h3>
-                            <a href="mailto:bess.knight@santaclaritasymphonyorchestra.org">bess.knight@santaclaritasymphonyorchestra.org</a>
-                       </div>
-                    </li>
-                    <li class="board-staff-item st-item st-flex st-half">
-                       <div class="image-cont st-item">
-                            <img src="/images/cassie.avif" alt="Cassie Borish" />
-                       </div> 
-                       <div class="board-staff-content st-item">
-                            <p class="title">Treasurer</p>
-                            <h3>Cassie Borish</h3>
-                            <a href="mailto:cassie.borish@santaclaritasymphonyorchestra.org">cassie.borish@santaclaritasymphonyorchestra.org</a>
-                       </div>
-                    </li>
-                    <li class="board-staff-item st-item st-flex st-half">
-                       <div class="image-cont st-item">
-                            <img src="/images/susy.avif" alt="Susy Christansen" />
-                       </div> 
-                       <div class="board-staff-content st-item">
-                            <p class="title">Marketing</p>
-                            <h3>Susy Christansen</h3>
-                            <a href="mailto:susy.christansen@santaclaritasymphonyorchestra.org">susy.christansen@santaclaritasymphonyorchestra.org</a>
-                       </div>
-                    </li>
-                    <li class="board-staff-item st-item st-flex st-half">
-                       <div class="image-cont st-item">
-                            <img src="/images/ashley.avif" alt="Ashley Turner" />
-                       </div> 
-                       <div class="board-staff-content st-item">
-                            <p class="title">Executive Director</p>
-                            <h3>Ashley Turner</h3>
-                            <a href="mailto:ashley.turner@santaclaritasymphonyorchestra.org">ashley.turner@santaclaritasymphonyorchestra.org</a>
-                       </div>
-                    </li>
-                    <li class="board-staff-item st-item st-flex st-half">
-                       <div class="image-cont st-item">
-                            <img src="/images/patrick.jpg" alt="Patrick Karamian" />
-                       </div> 
-                       <div class="board-staff-content st-item">    
-                            <p class="title">Administrative Coordinator</p>
-                            <h3>Patrick Karamian</h3>
-                       </div>
-                    </li>
+                    <BoardStaffCard 
+                        v-for="member in boardStaffMembers" 
+                        :key="member.id"
+                        :member="member"
+                    />
                 </ul>
             </div>
         </div>
@@ -76,18 +22,67 @@
 
 <script>
 import PageHero from '@/components/PageHero.vue'
+import BoardStaffCard from '@/components/BoardStaffCard.vue'
 import { useSiteConfig } from '@/composables/useSiteConfig.js'
 
 export default {
     name: 'BoardstaffPage',
     components: {
-        PageHero
+        PageHero,
+        BoardStaffCard
     },
     setup() {
         const { getAssetUrl } = useSiteConfig()
         
+        // Board and Staff member data
+        const boardStaffMembers = [
+            {
+                id: 'jr-hills',
+                name: 'J.R. Hills',
+                title: 'President',
+                image: '/images/jr.avif',
+                email: 'jr.hills@santaclaritasymphonyorchestra.org'
+            },
+            {
+                id: 'bess-knight',
+                name: 'Bess Knight',
+                title: 'Secretary',
+                image: '/images/bess.avif',
+                email: 'bess.knight@santaclaritasymphonyorchestra.org'
+            },
+            {
+                id: 'cassie-borish',
+                name: 'Cassie Borish',
+                title: 'Treasurer',
+                image: '/images/cassie.avif',
+                email: 'cassie.borish@santaclaritasymphonyorchestra.org'
+            },
+            {
+                id: 'susy-christansen',
+                name: 'Susy Christansen',
+                title: 'Marketing',
+                image: '/images/susy.avif',
+                email: 'susy.christansen@santaclaritasymphonyorchestra.org'
+            },
+            {
+                id: 'ashley-turner',
+                name: 'Ashley Turner',
+                title: 'Executive Director',
+                image: '/images/ashley.avif',
+                email: 'ashley.turner@santaclaritasymphonyorchestra.org'
+            },
+            {
+                id: 'patrick-karamian',
+                name: 'Patrick Karamian',
+                title: 'Administrative Coordinator',
+                image: '/images/patrick.jpg'
+                // No email provided for Patrick
+            }
+        ]
+        
         return {
-            getAssetUrl
+            getAssetUrl,
+            boardStaffMembers
         }
     }
 }
@@ -102,33 +97,21 @@ export default {
     gap: 24px;
 }
 
-.board-staff-list .board-staff-item {
-    align-items: stretch;
-    gap: 0;
-    --var-item-width: calc(50% - 12px);
-    flex: 1 1 calc(50% - 12px); /* Ensure equal flex distribution */
-    min-width: 0; /* Prevent flex items from overflowing */
+/* Mobile Responsive Styles */
+@media screen and (max-width: 768px) {
+    .board-staff-container {
+        padding: 40px 0;
+    }
+    
+    .board-staff-list {
+        flex-direction: column;
+        gap: 20px;
+    }
 }
 
-.image-cont {
-    --_var-img-height: 272px;
+@media screen and (max-width: 480px) {
+    .board-staff-container {
+        padding: 32px 0;
+    }
 }
-
-.board-staff-content {
-    background-color: var(--color-pistachio);
-    padding: 48px 24px;
-    flex: 1; /* Take remaining space */
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    min-width: 0; /* Prevent content overflow */
-}
-
-.board-staff-content a {
-    color: var(--color-black);
-    font-size: 10px;
-    word-break: break-all; /* Handle long email addresses */
-    overflow-wrap: break-word;
-}
-
 </style>
