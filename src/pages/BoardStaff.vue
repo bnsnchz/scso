@@ -26,7 +26,7 @@ import BoardStaffCard from '@/components/BoardStaffCard.vue'
 import { useSiteConfig } from '@/composables/useSiteConfig.js'
 
 export default {
-    name: 'BoardstaffPage',
+    name: 'BoardStaffPage',
     components: {
         PageHero,
         BoardStaffCard

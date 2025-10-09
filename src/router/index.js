@@ -10,7 +10,7 @@ import YouthCompetition from '../pages/YouthCompetition.vue'
 import ArtisticTeam from '../pages/ArtisticTeam.vue'
 import BrianStone from '../pages/BrianStone.vue'
 import AlexArellano from '../pages/AlexArellano.vue'
-import BoardStaff from '../pages/Boardstaff.vue'
+import BoardStaff from '../pages/BoardStaff.vue'
 import NotFound from '../pages/NotFound.vue'
 
 // Define routes
