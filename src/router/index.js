@@ -79,10 +79,6 @@ const routes = [
     }
   },
   {
-    path: '/about/artistic-team/',
-    redirect: '/about/artistic-team'
-  },
-  {
     path: '/about/brian-stone',
     name: 'BrianStone',
     component: BrianStone,
@@ -90,10 +86,6 @@ const routes = [
       title: 'Brian Stone',
       description: 'Learn about our artistic director, Dr. Brian Stone'
     }
-  },
-  {
-    path: '/about/brian-stone/',
-    redirect: '/about/brian-stone'
   },
   {
     path: '/about/alex-arellano',
@@ -105,10 +97,6 @@ const routes = [
     }
   },
   {
-    path: '/about/alex-arellano/',
-    redirect: '/about/alex-arellano'
-  },
-  {
     path: '/about/board-staff',
     name: 'BoardStaff',
     component: BoardStaff,
@@ -116,10 +104,6 @@ const routes = [
       title: 'Board and Staff',
       description: 'Meet our board and staff'
     }
-  },
-  {
-    path: '/about/board-staff/',
-    redirect: '/about/board-staff'
   },
   {
     path: '/:pathMatch(.*)*',
@@ -148,12 +132,8 @@ const router = createRouter({
 
 // Handle redirect parameter from 404 fallback
 router.beforeEach((to, from, next) => {
-  // Check for redirect parameter (from GitHub Pages 404 fallback)
-  if (to.query.redirect) {
-    next(to.query.redirect)
-  } else {
-    next()
-  }
+  // Temporarily disable redirect handling to prevent infinite loops
+  next()
 })
 
 // Update document title and meta description on route change

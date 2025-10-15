@@ -63,18 +63,18 @@
     <div 
       class="mobile-menu-overlay" 
       :class="{ active: isMobileMenuOpen }"
-      @click="closeMobileMenu"
+      @click="handleOverlayClick"
     >
-      <nav class="mobile-menu" role="navigation" aria-label="Mobile navigation">
+      <nav class="mobile-menu" role="navigation" aria-label="Mobile navigation" @click.stop>
         <ul class="mobile-menu-list">
           <li v-for="item in navItems" :key="item.label">
-            <router-link 
-              :to="item.href" 
-              @click="closeMobileMenu"
+            <a 
+              :href="item.href" 
+              @click="handleNavClick"
               :aria-label="item.ariaLabel"
             >
               {{ item.label }}
-            </router-link>
+            </a>
           </li>
         </ul>
         <div class="mobile-menu-cta">
@@ -136,6 +136,16 @@ export default {
     },
     closeMobileMenu() {
       this.isMobileMenuOpen = false
+    },
+    handleOverlayClick(event) {
+      // Only close if clicking on the overlay itself, not the menu content
+      if (event.target === event.currentTarget) {
+        this.closeMobileMenu()
+      }
+    },
+    handleNavClick(event) {
+      this.closeMobileMenu()
+      // Let the default navigation happen
     },
   }
 }

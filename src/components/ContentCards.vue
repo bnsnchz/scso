@@ -12,13 +12,15 @@
           <h3>{{ card.title }}</h3>
           <p v-if="card.subtitle">{{ card.subtitle }}</p>
           <p>{{ card.description }}</p>
-          <component :is="card.linkType === 'external' ? 'a' : 'router-link'" :class="card.buttonClass || 'btn v2'"
-            :to="card.linkType === 'external' ? undefined : card.linkHref"
-            :href="card.linkType === 'external' ? card.linkHref : undefined" :aria-label="card.linkAriaLabel"
-            :target="card.linkType === 'external' ? '_blank' : undefined"
-            :rel="card.linkType === 'external' ? 'noopener noreferrer' : undefined">
+          <router-link v-if="card.linkType !== 'external'" :class="card.buttonClass || 'btn v2'"
+            :to="card.linkHref" :aria-label="card.linkAriaLabel">
             {{ card.linkText }}
-          </component>
+          </router-link>
+          <a v-else :class="card.buttonClass || 'btn v2'"
+            :href="card.linkHref" :aria-label="card.linkAriaLabel"
+            target="_blank" rel="noopener noreferrer">
+            {{ card.linkText }}
+          </a>
         </div>
       </article>
     </div>
