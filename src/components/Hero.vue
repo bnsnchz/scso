@@ -99,11 +99,13 @@ export default {
   }
 
   .hero-image {
-      /* display: none; */
+    height: 50vh;
   }
+
 
   section.hero {
       background-color: var(--color-black);
+      padding: 260px 0 160px;
   }
 
   .hero-image img {

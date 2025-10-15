@@ -47,16 +47,6 @@ export default {
     object-position: top;
 }
 
-/* .non-profit-banner .image-cont:after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0,0,0,.6);
-    top: 0;
-    left: 0;
-} */
-
 .non-profit-banner-content {
     position: absolute;
     top: 0;
@@ -76,6 +66,21 @@ export default {
 .non-profit-banner p {
     font-size: 20px;
     line-height: 1.5;
+}
+
+@media screen and (max-width: 768px) {
+  .non-profit-banner {
+    margin-bottom: 0;
+  }
+
+  .non-profit-banner-content {
+    position: relative;
+    transform: none;
+    left: 0;
+    top: 0;
+    width: 100%;
+    padding: 24px;
+  }
 }
 
 </style>

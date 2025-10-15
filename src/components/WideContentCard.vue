@@ -82,4 +82,14 @@ export default {
     fill: #fff;
 }
 
+@media screen and (max-width: 768px) {
+  .wide-content-card {
+    text-align: center;
+  }
+
+  .wide-content-card-social-links {
+    justify-content: center;
+  }
+}
+
 </style>
