@@ -123,11 +123,9 @@ export default {
   },
   mounted() {
     window.addEventListener('scroll', this.handleScroll)
-    document.addEventListener('click', this.handleClickOutside)
   },
   beforeUnmount() {
     window.removeEventListener('scroll', this.handleScroll)
-    document.removeEventListener('click', this.handleClickOutside)
   },
   methods: {
     handleScroll() {
@@ -139,18 +137,6 @@ export default {
     closeMobileMenu() {
       this.isMobileMenuOpen = false
     },
-    handleClickOutside(event) {
-      const header = this.$el
-      const hamburgerBtn = header.querySelector('.hamburger-btn')
-      const mobileMenu = header.querySelector('.mobile-menu-overlay')
-      
-      if (this.isMobileMenuOpen && 
-          !header.contains(event.target) && 
-          !hamburgerBtn.contains(event.target) && 
-          !mobileMenu.contains(event.target)) {
-        this.closeMobileMenu()
-      }
-    }
   }
 }
 </script>
