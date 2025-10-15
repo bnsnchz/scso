@@ -43,7 +43,4 @@ export default {
 </script>
 
 <style scoped>
-.home-page {
-  /* Home page specific styles if needed */
-}
 </style>

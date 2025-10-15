@@ -91,4 +91,28 @@ export default {
   line-height: 1.4;
   max-width: 400px;
 }
+@media screen and (max-width: 768px) {
+  .hero-content {
+      max-width: 100%;
+      right: 50%;
+      width: 100%;
+  }
+
+  .hero-image {
+      /* display: none; */
+  }
+
+  section.hero {
+      background-color: var(--color-black);
+  }
+
+  .hero-image img {
+      display: none;
+  }
+
+  .hero-content h1 {
+      font-size: 48px;
+  }
+}
+
 </style>
