@@ -165,17 +165,19 @@
         </div>
       </div>
     </section>
+    <Newsletter />
   </div>
 </template>
 
 <script>
 import { ref } from 'vue'
 import PageHero from '@/components/PageHero.vue'
-
+import Newsletter from '@/components/Newsletter.vue'
 export default {
   name: 'YouthCompetitionPage',
   components: {
-    PageHero
+    PageHero,
+    Newsletter
   },
   setup() {
     const isSubmitting = ref(false)

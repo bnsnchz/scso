@@ -164,6 +164,7 @@ ul {
   max-width: var(--var-container-width);
   margin: 0 auto;
   position: relative;
+  padding: 64px 0;
 }
 
 .st-container-lg {
@@ -171,6 +172,7 @@ ul {
   max-width: var(--var-container-width-lg);
   margin: 0 auto;
   position: relative;
+  padding: 64px 0;
 }
 
 .st-container-md {
@@ -178,6 +180,7 @@ ul {
   max-width: var(--var-container-width-md);
   margin: 0 auto;
   position: relative;
+  padding: 64px 0;
 }
 
 .st-container-sm {
@@ -185,11 +188,12 @@ ul {
   max-width: var(--var-container-width-sm);
   margin: 0 auto;
   position: relative;
+  padding: 64px 0;
 }
 
 @media screen and ( max-width: 800px ){
   .st-container {
-    padding: 0 16px;
+    padding: 64px 16px;
   }
 }
 
@@ -436,7 +440,7 @@ main:not(.page-home) {
   .st-container-lg,
   .st-container-md,
   .st-container-sm {
-    padding: 0 16px;
+    padding: 64px 16px;
   }
   
   section {
@@ -483,9 +487,9 @@ main:not(.page-home) {
   .st-container-lg,
   .st-container-md,
   .st-container-sm {
-    padding: 0 12px;
+    padding: 64px 12px;
   }
-  
+
   section {
     padding: 24px 0;
   }

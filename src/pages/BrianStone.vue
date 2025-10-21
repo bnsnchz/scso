@@ -93,8 +93,4 @@
     :deep(.content-text p) {
         font-size: 20px;
     }
-
-    .st-container.cnt-stl {
-        padding: 64px 0;
-    }
 </style>
